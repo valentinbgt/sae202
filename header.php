@@ -12,6 +12,7 @@
         <title><?= $title ?></title>
 
         <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/fonts/getAll.css">
 
         <script src="/assets/js/main.js"></script>
 
