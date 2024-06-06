@@ -1,0 +1,51 @@
+/* :root{
+
+} */
+
+*{
+    margin: 0; padding: 0;
+}
+
+body{
+    min-height: 100vh;
+}
+
+nav{
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+
+    height: 80px;
+
+    background-color: aqua;/* DEV */
+}
+
+#content{
+    padding-top: 80px; /* ajouter la hauteur de la nav */
+    min-height: calc(100vh - 80px); /* retirer la hauteur de la nav */
+    position: relative;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+}
+
+
+@media screen and (max-width: 576px) {
+    nav{
+        bottom: 0;
+    }
+
+    #content{
+        padding-top: 0;
+    }
+    
+}
+
+@media screen and (min-width: 576px) {
+    /* styles tablettes */
+    
+}
+
+/* 960px pc  */
