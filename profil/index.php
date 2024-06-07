@@ -13,7 +13,10 @@
     extract($user);
 ?>
         <main>
-            <h1><?= $_SESSION["user_displayName"] ?></h1>
+            <div class="topHeroImage">
+                <h1>Profil</h1>
+            </div>
+            <h2><?= $_SESSION["user_displayName"] ?></h2>
             <p><?= $user_name ?></p>
             <img src="/profil/picture.php?user=<?= $user_name; ?>" alt="Photo de profil de <?= $user_displayName ?>" width="300">
             <p><?= $user_email ?></p>

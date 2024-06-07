@@ -13,7 +13,9 @@
     $db = dbConn();
 ?>
         <main>
-            <h1>Gestion des jardins</h1>
+            <div class="topHeroImage">
+                <h1>Gestion</h1>
+            </div>
             <br><br>
 
             <?php

@@ -29,19 +29,18 @@
     <body>
         <header>
             <nav>
-                <div class="navLink"><object data="/assets/img/svg/home.svg" type="image/svg+xml" class="navIcon"></object><a href="/"></a></div>
-                <div class="navLink"><object data="/assets/img/svg/fleur.svg" type="image/svg+xml" class="navIcon"></object><a href="/jardins"></a></div>
-                <div class="navLink"><object data="/assets/img/svg/bulles.svg" type="image/svg+xml" class="navIcon"></object><a href="/contact"></a></div>
+                <div class="navLink"><object data="/assets/img/svg/home.svg" type="image/svg+xml" class="navIcon"></object><a href="/"><span class="navLinkText">Seed</span></a></div>
+                <div class="navLink"><object data="/assets/img/svg/fleur.svg" type="image/svg+xml" class="navIcon"></object><a href="/jardins"><span class="navLinkText">Jardins</span></a></div>
+                <div class="navLink"><object data="/assets/img/svg/bulles.svg" type="image/svg+xml" class="navIcon"></object><a href="/contact"><span class="navLinkText">Communauté</span></a></div>
                 
                 <?php
                     if(empty($_SESSION["user_id"])){
                 ?>
-                    <div <?php if($page == "signin.php") echo "hidden"; ?> class="navLink"><object data="/assets/img/svg/user.svg" type="image/svg+xml" class="navIcon"></object><a href="/profil/signin.php?from=<?= $from; ?>"></a></div>
-                    <div <?php if($page != "signin.php") echo "hidden"; ?> class="navLink"><object data="/assets/img/svg/user.svg" type="image/svg+xml" class="navIcon"></object><a href="/profil/signup.php?from=<?= $from; ?>"></a></div>
+                    <div <?php if($page == "signin.php") echo "hidden"; ?> class="navLink"><object data="/assets/img/svg/user.svg" type="image/svg+xml" class="navIcon"></object><a href="/profil/signin.php?from=<?= $from; ?>"><span class="navLinkText">Connexion</span></a></div>
+                    <div <?php if($page != "signin.php") echo "hidden"; ?> class="navLink"><object data="/assets/img/svg/user.svg" type="image/svg+xml" class="navIcon"></object><a href="/profil/signup.php?from=<?= $from; ?>"><span class="navLinkText">Inscription</span></a></div>
                 <?php
                     }else{
                 ?>
-                    <!-- <a <?php if($page == "profil") echo "hidden"; ?> href="/profil"><img src="/profil/picture.php?user=<?= $_SESSION["user_name"] ?>" alt="Photo de profil de <?= $_SESSION["user_displayName"] ?>" width="60px"></a> -->
                     <a href="/profil"><div style="background-image: url('/profil/picture.php?user=<?= $_SESSION["user_name"] ?>');" class="navIcon image"></div></a>
                 <?php
                     }

@@ -13,7 +13,9 @@
     }
 ?>
         <main>
-            <h1>Connexion</h1>
+            <div class="topHeroImage">
+                <h1>Connexion</h1>
+            </div>
             <form action="/profil/inc/signin.proc.php" method="post" enctype="multipart/form-data">
                 <input type="text" name="userIdentifier" placeholder="Nom d'utilisateur ou email"><br>
                 <input type="password" name="userPassword" placeholder="Mot de passe"><br>

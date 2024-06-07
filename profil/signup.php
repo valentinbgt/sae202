@@ -13,7 +13,9 @@
     }
 ?>
         <main>
-            <h1>Inscription</h1>
+            <div class="topHeroImage">
+                <h1>Inscription</h1>
+            </div>
             <form action="/profil/inc/signup.proc.php" method="post" enctype="multipart/form-data">
                 <input type="text" name="userName" placeholder="Nom d'utilisateur"><br>
                 <input type="text" name="userDisplayName" placeholder="Nom d'affichage"><br>

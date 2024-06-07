@@ -5,10 +5,8 @@
 ?>
         <main>
             <div class="topHeroImage">
-                <h1>Jardins</h1>
+                <h1>Contact</h1>
             </div>
-            <p>Aucune parcelle de jardin n'est disponible à l'emprunt actuellement.</p>
-            <p><a href="gestion.php">Ajoutez votre jardin</a></p>
         </main>
 <?php
     require_once(DOCUMENT_ROOT . 'footer.php');

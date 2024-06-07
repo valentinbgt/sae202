@@ -16,7 +16,8 @@ h1{
     font-family: 'MoreSugar';
     width: fit-content;
     margin: 0 auto;
-    font-size: 48px;
+    font-size: 110px;
+    color: var(--yellow-background);
 }
 
 body{
@@ -31,12 +32,36 @@ nav{
 
     background-color: var(--yellow-background);
 
-    border: solid 6px var(--blue-accent);
-    width: calc(100% - 12px);
+    border-bottom: solid 6px var(--blue-accent);
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .navIcon{
     display: none;
+}
+.navIcon.image{
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    display: block;
+}
+
+.navLink a{
+    text-decoration: none;
+    color: black;
+    font-weight: 550;
+    transition: font-weight 0.1s ease-out;
+    font-size: 18px;
+}
+.navLink a:hover{
+    font-weight: 700;
+    transition: font-weight 0.2s ease-out;
 }
 
 #content{
@@ -46,11 +71,26 @@ nav{
 }
 
 .topHeroImage{
-    background-color: cadetblue; /* DEV */
+    background-image: url('/assets/img/background.webp');
+    background-position: center;
+    background-size: cover;
+
     width: 100%;
 
-    display: flex;
-    align-items: center;
+    height: 300px;
+
+    margin-bottom: 30px;
+}
+
+.topHeroImage h1{
+    width: 100%; height: 100%;
+    align-content: center;
+    text-align: center;
+    backdrop-filter: brightness(0.75);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 et IE 11 */
+    user-select: none; /* Standard */
 }
 
 .cls-1{
@@ -66,13 +106,13 @@ footer{
 @media screen and (max-width: 576px) {
     nav{
         bottom: 0;
+
+        border: solid 6px var(--blue-accent);
+        width: calc(100% - 12px);
+        
         border-top-left-radius: 24px;
         border-top-right-radius: 24px;
         border-bottom: none;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
     }
 
     .navLink{
@@ -88,6 +128,10 @@ footer{
         left: 0;
     }
 
+    .navLinkText{
+        display: none;
+    }
+
     #content{
         padding-top: 0;
     }
@@ -100,11 +144,9 @@ footer{
         display: block;
         height: 50px;
     }
-    .navIcon.image{
-        width: 56px; height: 56px;
-        border-radius: 50%;
-        background-position: center;
-        background-size: cover;
+
+    h1{
+        font-size: 80px;
     }
     
 }
