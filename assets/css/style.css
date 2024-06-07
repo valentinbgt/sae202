@@ -1,9 +1,22 @@
-/* :root{
-
-} */
+:root{
+    --blue-accent: #A7E6FF;
+    --yellow-background: #FFFCED;
+}
 
 *{
     margin: 0; padding: 0;
+    font-family: 'Montserrat';
+}
+
+html{
+    background-color: var(--yellow-background);
+}
+
+h1{
+    font-family: 'MoreSugar';
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 48px;
 }
 
 body{
@@ -11,19 +24,37 @@ body{
 }
 
 nav{
-    position: absolute;
-    width: 100%;
+    position: fixed;
     z-index: 10;
 
     height: 80px;
 
-    background-color: aqua;/* DEV */
+    background-color: var(--yellow-background);
+
+    border: solid 6px var(--blue-accent);
+    width: calc(100% - 12px);
+}
+
+.navIcon{
+    display: none;
 }
 
 #content{
-    padding-top: 80px; /* ajouter la hauteur de la nav */
-    min-height: calc(100vh - 80px); /* retirer la hauteur de la nav */
+    padding-top: calc(80px + 6px); /* ajouter la hauteur de la nav + la bordure */
+    min-height: calc(100vh - (80px + 6px)); /* retirer la hauteur de la nav + la bordure */
     position: relative;
+}
+
+.topHeroImage{
+    background-color: cadetblue; /* DEV */
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.cls-1{
+    fill: var(--blue-accent);
 }
 
 footer{
@@ -35,10 +66,45 @@ footer{
 @media screen and (max-width: 576px) {
     nav{
         bottom: 0;
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+        border-bottom: none;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .navLink{
+        position: relative;
+    }
+
+    .navLink a{
+        width: 50px;
+        height: 50px;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
     #content{
         padding-top: 0;
+    }
+
+    .topHeroImage{
+        height: 180px;
+    }
+
+    .navIcon{
+        display: block;
+        height: 50px;
+    }
+    .navIcon.image{
+        width: 56px; height: 56px;
+        border-radius: 50%;
+        background-position: center;
+        background-size: cover;
     }
     
 }

@@ -4,7 +4,9 @@
     require_once(DOCUMENT_ROOT . 'header.php');
 ?>
         <main>
-            <h1>Accueil</h1>
+            <div class="topHeroImage">
+                <h1>Seed</h1>
+            </div>
         </main>
 <?php
     require_once(DOCUMENT_ROOT . 'footer.php');
