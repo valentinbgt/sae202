@@ -48,8 +48,7 @@
         $file = $_FILES["jardinPicture"];
 
         if(@is_array(getimagesize($file["tmp_name"]))){
-
-            $image = imagewebp(imagecreatefromstring(file_get_contents($file["tmp_name"])), $file["tmp_name"], 0); //convert image to webp
+            imagewebp(imagecreatefromstring(file_get_contents($file["tmp_name"])), $file["tmp_name"], 0); //convert image to webp
 
             $jardinPicture = base64_encode(file_get_contents($file["tmp_name"])); //convert file to base64 string
 
