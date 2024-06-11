@@ -71,6 +71,7 @@ nav{
 #content{
     padding-top: calc(80px + 6px); /* ajouter la hauteur de la nav + la bordure */
     min-height: calc(100vh - (80px + 6px)); /* retirer la hauteur de la nav + la bordure */
+    padding-bottom: 130px; /*hauteur du footer + un peu de marge*/
     position: relative;
 }
 
@@ -104,6 +105,9 @@ nav{
 footer{
     position: absolute;
     bottom: 0;
+    width: 100%;
+    background-color: gray;/* DEV */
+    height: 100px;
 }
 
 
