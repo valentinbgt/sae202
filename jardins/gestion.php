@@ -37,7 +37,7 @@
                             <?= $jardin_location ?><br>
                             Coordonnées GPS : <?php if(!empty($jardin_gps)) echo $jardin_gps; ?><br>
                             <?php if(!$jardin_available) echo "inactif - "; ?>
-                            <a href="proc/update.php?id=<?= $jardin_enc_id; ?>">modifier</a> - <a href="proc/delete.php?id=<?= $jardin_enc_id; ?>">supprimer</a>
+                            <a href="update.php?id=<?= $jardin_enc_id; ?>">modifier</a> - <a href="proc/delete.php?id=<?= $jardin_enc_id; ?>">supprimer</a>
                             <p>parcelles :</p>
                             <?php
                                 $sql = "SELECT * FROM `parcelles` WHERE `jardin_id`=:jardinid";
@@ -48,7 +48,7 @@
 
                                 if(count($res) < 1){
                                     ?>
-                                        <p>Ce jardin n'as aucune parcelle configurée. - <a href="proc/update.php?id=<?= $jardin_enc_id; ?>">ajouter une parcelle</a></p>
+                                        <p>Ce jardin n'as aucune parcelle configurée. - <a href="update.php?id=<?= $jardin_enc_id; ?>">ajouter une parcelle</a></p>
                                     <?php
                                 }else{
                                     foreach($res as $parcelle){

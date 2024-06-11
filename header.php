@@ -29,7 +29,7 @@
     <body>
         <header>
             <nav>
-                <div class="navLink"><object data="/assets/img/svg/home.svg" type="image/svg+xml" class="navIcon"></object><a href="/"><span class="navLinkText">Seed</span></a></div>
+                <div class="navLink"><object data="/assets/img/svg/home.svg" type="image/svg+xml" class="navIcon"></object><a href="/"><span class="navLinkText"><img class="home-logo" src="/assets/img/svg/logo.svg"></img></span></a></div>
                 <div class="navLink"><object data="/assets/img/svg/fleur.svg" type="image/svg+xml" class="navIcon"></object><a href="/jardins"><span class="navLinkText">Jardins</span></a></div>
                 <div class="navLink"><object data="/assets/img/svg/bulles.svg" type="image/svg+xml" class="navIcon"></object><a href="/contact"><span class="navLinkText">Communauté</span></a></div>
                 
