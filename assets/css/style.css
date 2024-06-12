@@ -65,23 +65,11 @@ nav {
     transition: font-weight 0.2s ease-out;
 }
 
-.home-logo{
-    height: 50px;
-}
-
 #content {
     flex: 1;
     padding-top: calc(80px + 6px); /* Add nav height + border */
     padding-bottom: 100px; /* Space for the footer */
     box-sizing: border-box;
-}
-
-
-#content{
-    padding-top: calc(80px + 6px); /* ajouter la hauteur de la nav + la bordure */
-    min-height: calc(100vh - (80px + 6px)); /* retirer la hauteur de la nav + la bordure */
-    padding-bottom: 130px; /*hauteur du footer + un peu de marge*/
-    position: relative;
 }
 
 .topHeroImage {
@@ -111,10 +99,6 @@ nav {
 }
 
 footer {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-
     background-color: #0a6847;
     color: white;
     padding: 20px;
@@ -322,10 +306,6 @@ footer {
         font-weight: bold;
     }
     
-    form p a:hover {
-        text-decoration: underline;
-    }
-
     .signup-link {
         text-align: center;
         margin-bottom: 20px;
@@ -339,5 +319,85 @@ footer {
 
     .signup-link a:hover {
         text-decoration: underline;
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+
+    .profile-picture {
+        margin-bottom: 20px;
+    }
+
+    .profile-picture img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 5px solid #7FB096; 
+    }
+
+    h2 {
+        margin-top: -20px;
+        margin-bottom: 5px;
+    }
+
+    .stars {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .stars svg {
+        width: 25px; 
+        height: 25px; 
+        margin: 0 3px;
+        margin-bottom: 50px;
+    }
+
+    /* Style du bouton Paramètres */
+    .dropdown {
+        position: relative;
+        display: flex; /* Utilisation de flexbox */
+        justify-content: center; /* Centre le contenu horizontalement */
+    }
+
+    .dropbtn {
+        background-color: #7FB096;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        border: 2px solid #7FB096;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    .dropbtn:focus {
+        outline: none;
+    }
+
+    /* Style du contenu du menu déroulant */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        top: 100%; /* Positionne le menu déroulant en dessous du bouton */
+        left: 50%;
+        transform: translateX(-50%); /* Déplace le menu déroulant de moitié de sa propre largeur vers la gauche */
+    }
+
+    /* Affichage du menu déroulant lorsque le bouton est survolé */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
     }
 }
