@@ -36,55 +36,79 @@
                             $res = $query->fetch();
                             $nbParcelles = $res["nb_parcelles"];
             ?>
+                <div class="carteJardin">
+                    <img src="/jardins/picture.php?id=<?= $jardin_enc_id ?>" alt="Photo du jardin <?= $jardin_location; ?>" height="50px">
 
-                        <img src="/jardins/picture.php?id=<?= $jardin_enc_id ?>" alt="Photo du jardin <?= $jardin_location; ?>" height="50px">
-                        <p>
-                            <?= $jardin_location ?><br>
-                            Coordonnées GPS : <?php if(!empty($jardin_gps)) echo $jardin_gps; ?><br>
-                            <?php if(!$jardin_available) echo "inactif - "; ?>
-                            <a href="update.php?id=<?= $jardin_enc_id; ?>">modifier</a> - <a <?php if($nbParcelles) echo "hidden" ?> href="proc/delete.php?id=<?= $jardin_enc_id; ?>">supprimer</a>
-                            <p><?= $nbParcelles ?> parcelles :</p>
-                            <?php
-                                $sql = "SELECT * FROM `parcelles` WHERE `jardin_id`=:jardinid";
-                                $query = $db->prepare($sql);
-                                $query->bindParam(':jardinid', $jardin_id);
-                                $query->execute();
-                                $res = $query->fetchAll(PDO::FETCH_ASSOC);
+                    <p class="jardinTitle"><?= $jardin_location ?></p>
+                    <?php
+                        if(empty($jardin_gps)) $jardin_gps = "/";
+                    ?>
+                    <p class="jardinGPS">GPS : <?= $jardin_gps ?></p>
 
-                                if(count($res) < 1){
-                                    ?>
-                                        <p>Ce jardin n'as aucune parcelle configurée. - <a href="update.php?id=<?= $jardin_enc_id; ?>">ajouter une parcelle</a></p>
-                                    <?php
-                                }else{
-                                    echo '<ul style="list-style: inside;">';
-                                    foreach($res as $parcelle){
-                                        extract($parcelle);
-                                        $parcelle_enc_id = urlencode(base64_encode($parcelle_id));
-                                        if($parcelle_user_id === NULL){
-                                            $parcelle_user = "Personne";
-                                        }else $parcelle_user = getUserName($parcelle_user_id);
-                                        ?>
-                                            <li>
-                                                <?= $parcelle_taille; ?>m² - 
-                                                <?= $parcelle_typePlantation ?><?php if($parcelle_typePlantation) echo ' - '; ?>
-                                                <?php 
-                                                    if($parcelle_user != "Personne" && !$parcelle_validation) echo "Demandé";
-                                                    else echo "Utilisé";
-                                                ?> 
-                                                par : <?= $parcelle_user; ?>
-                                                <?php if($parcelle_user == "Personne"){ ?> <a href="proc/delete.php?parcelle=<?= $parcelle_enc_id ?>">supprimer</a> <?php } ?>
-                                                <?php
-                                                    if($parcelle_user != "Personne" && !$parcelle_validation){?>
-                                                        accepter refuser
-                                                    <?php }
-                                                ?>
-                                            </li>
-                                        <?php
-                                    }
-                                    echo '</ul>';
-                                }
+                    <div class="jardinDetails">
+                        <p><?= $nbParcelles ?> parcelle<?php if(@intval($nbParcelles) > 1) echo "s" ?></p>
+
+                        <?php
+                            if($jardin_available) $jardin_status = "actif";
+                            else $jardin_status = "inactif";
+                        ?>
+                        <p><?= $jardin_status ?></p>
+                    </div>
+                    
+                    <div class="jardinActions">
+                        <a href="update.php?id=<?= $jardin_enc_id; ?>">modifier</a>
+
+                        <?php
+                            if(!$nbParcelles){
+                                ?>
+                                <a href="proc/delete.php?id=<?= $jardin_enc_id; ?>">supprimer</a>
+                                <?php
+                            }
+                        ?>
+                    </div>
+                    
+                    <!--<p> parcelles :</p>
+                    <?php
+                        $sql = "SELECT * FROM `parcelles` WHERE `jardin_id`=:jardinid";
+                        $query = $db->prepare($sql);
+                        $query->bindParam(':jardinid', $jardin_id);
+                        $query->execute();
+                        $res = $query->fetchAll(PDO::FETCH_ASSOC);
+
+                        if(count($res) < 1){
                             ?>
-                        </p><br><br>
+                                <p>Ce jardin n'as aucune parcelle configurée. - <a href="update.php?id=<?= $jardin_enc_id; ?>">ajouter une parcelle</a></p>
+                            <?php
+                        }else{
+                            echo '<ul style="list-style: inside;">';
+                            foreach($res as $parcelle){
+                                extract($parcelle);
+                                $parcelle_enc_id = urlencode(base64_encode($parcelle_id));
+                                if($parcelle_user_id === NULL){
+                                    $parcelle_user = "Personne";
+                                }else $parcelle_user = getUserName($parcelle_user_id);
+                                ?>
+                                    <li>
+                                        <?= $parcelle_taille; ?>m² - 
+                                        <?= $parcelle_typePlantation ?><?php if($parcelle_typePlantation) echo ' - '; ?>
+                                        <?php 
+                                            if($parcelle_user != "Personne" && !$parcelle_validation) echo "Demandé";
+                                            else echo "Utilisé";
+                                        ?> 
+                                        par : <?= $parcelle_user; ?>
+                                        <?php if($parcelle_user == "Personne"){ ?> <a href="proc/delete.php?parcelle=<?= $parcelle_enc_id ?>">supprimer</a> <?php } ?>
+                                        <?php
+                                            if($parcelle_user != "Personne" && !$parcelle_validation){?>
+                                                accepter refuser
+                                            <?php }
+                                        ?>
+                                    </li>
+                                <?php
+                            }
+                            echo '</ul>';
+                        }
+                    ?>
+                </div><br><br>-->
 
             <?php
                     }
