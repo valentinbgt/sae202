@@ -72,7 +72,7 @@ nav {
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
+
 #content{
     padding-top: calc(80px + 6px); /* ajouter la hauteur de la nav + la bordure */
     min-height: calc(100vh - (80px + 6px)); /* retirer la hauteur de la nav + la bordure */
@@ -80,10 +80,7 @@ nav {
     position: relative;
 }
 
-.topHeroImage{
-=======
 .topHeroImage {
->>>>>>> 21ef52f2a02d6a38fca76a69449423c8e5fe9711
     background-image: url('/assets/img/background.webp');
     background-position: center;
     background-size: cover;
@@ -109,15 +106,12 @@ nav {
     fill: var(--blue-accent);
 }
 
-<<<<<<< HEAD
-footer{
+footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: gray;/* DEV */
     height: 100px;
-=======
-footer {
+
     background-color: #0a6847;
     color: white;
     padding: 20px;
@@ -203,7 +197,6 @@ footer {
 
 .footerBottom p {
     color: white;
->>>>>>> 21ef52f2a02d6a38fca76a69449423c8e5fe9711
 }
 
 
