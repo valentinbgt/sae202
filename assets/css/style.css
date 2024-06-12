@@ -223,6 +223,9 @@ footer {
     font-size: 18px;
     font-weight: 450;
     margin: 12px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 #signForm input[type=submit]:hover,
