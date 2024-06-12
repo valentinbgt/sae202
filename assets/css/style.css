@@ -278,6 +278,89 @@ footer {
     margin-bottom: 40px;
 }
 
+.jardinsContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 260px;
+    grid-gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carteJardin{
+    border: solid 2px #7fb096;
+    border-radius: 12px;
+    padding: 20px;
+    padding-top: 118px;
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f0ee;
+}
+
+.carteJardin img.photoJardin{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100px;
+    object-fit: cover;
+}
+
+.carteJardin .jardinTitle{
+    font-weight: 600;
+    font-size: 18px;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.carteJardin .jardinGPS{
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(155, 155, 155);
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.carteJardin .jardinDetails {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-weight: 500;
+}
+
+.carteJardin .separator{
+    width: 100px;
+    height: 1px;
+    background: gray;
+    margin: 6px auto;
+}
+
+.carteJardin .jardinDetails .separator{
+    width: 1px;
+    height: 14px;
+    background: gray;
+    margin: auto 10px;
+}
+
+.carteJardin .jardinActions {
+    margin: 0 auto;
+    margin-top: 6px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.carteJardin .jardinActions a{
+    text-decoration: none;
+    background-color: #7aba78;
+    color: white;
+    padding: 10px 12px;
+    margin: 8px;
+    border-radius: 8px;
+}
+
+
 .footerNav a {
     color: white;
     text-decoration: none;
