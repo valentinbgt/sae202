@@ -173,6 +173,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     margin: 10px 0;
     width: 50%;
     min-width: 380px;
@@ -194,6 +195,7 @@ footer {
     border-radius: 6px;
     font-weight: 500;
     width: 80%;
+    caret-color: #7FB096;
 }
 
 #signForm input[type=submit],
@@ -214,7 +216,7 @@ footer {
     padding: 12px;
     font-size: 18px;
     font-weight: 450;
-    margin: 10px auto;
+    margin: 12px;
 }
 
 #signForm input[type=submit]:hover,
@@ -224,11 +226,26 @@ footer {
     background-color: transparent;
     color: black;
     border: solid 2px #7FB096;
+}
+
+#signForm input[type=submit]:hover{
     font-weight: 600;
 }
 
 #signForm #picturePreview{
-    height: 80px;
+    height: 80px; width: 80px;
+    margin: 12px;
+    border: solid 1px #7FB096;
+    border-radius: 50%;
+    display: inline-block;
+    object-fit: cover;
+}
+
+#signForm #picturePreviewContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
 }
 
 #signForm .signup-link p{

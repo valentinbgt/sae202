@@ -58,8 +58,10 @@
                     <div class="formBox">
                         <label for="userProfilePicture">Photo de profil</label>
                         <input hidden type="file" name="userProfilePicture" id="userProfilePicture">
-                        <img hidden id="picturePreview" alt="Prévisualisation de la photo de profil">
-                        <p class="addPicture" id="addPicture">Ajouter une photo</p>
+                        <div id="picturePreviewContainer">
+                            <img hidden id="picturePreview" alt="Prévisualisation de la photo de profil" src="/assets/img/default_user.webp">
+                            <p class="addPicture" id="addPicture">Ajouter une photo</p>
+                        </div>
                     </div>
                     <div class="formBox">
                         <input type="submit" value="S'inscrire">
