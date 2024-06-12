@@ -1,5 +1,5 @@
 <?php
-    $title = "Inscription - Seed";
+    $title = "Inscription | Seed";
     define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/');
     require_once(DOCUMENT_ROOT . 'header.php');
 
@@ -20,13 +20,15 @@
                 <input type="text" name="userName" placeholder="Nom d'utilisateur"><br>
                 <input type="text" name="userDisplayName" placeholder="Nom d'affichage"><br>
                 <input type="email" name="userEmail" placeholder="Adresse mail"><br>
-                <input type="email" name="userEmailConfirm" placeholder="Adresse mail"><br>
+                <input type="email" name="userEmailConfirm" placeholder=" Confirmation adresse mail"><br>
                 <input type="password" name="userPassword" placeholder="Mot de passe"><br>
                 <input type="password" name="userPasswordConfirm" placeholder="Confirmer mot de passe"><br>
                 <input type="file" name="userProfilePicture"><br>
                 <input type="submit" value="S'inscrire">
             </form>
-            <p>Ou plutôt : <a href="/profil/signin.php?from=<?= $from; ?>">connexion</a></p>
+            <div class="signup-link">
+            <p>Vous avez déjà un compte ? <a href="/profil/signin.php?from=<?= $from; ?>">Se Connecter</a></p>
+            </div>
         </main>
 <?php
     require_once(DOCUMENT_ROOT . 'footer.php');

@@ -1,5 +1,5 @@
 <?php
-    $title = "Profil - Seed";
+    $title = "Profil | Seed";
     define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/');
     require_once(DOCUMENT_ROOT . 'header.php');
 

@@ -1,5 +1,5 @@
 <?php
-    $title = "Connexion - Seed";
+    $title = "Connexion | Seed";
     define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/');
     require_once(DOCUMENT_ROOT . 'header.php');
 
@@ -17,11 +17,15 @@
                 <h1>Connexion</h1>
             </div>
             <form action="/profil/inc/signin.proc.php" method="post" enctype="multipart/form-data">
-                <input type="text" name="userIdentifier" placeholder="Nom d'utilisateur ou email"><br>
-                <input type="password" name="userPassword" placeholder="Mot de passe"><br>
-                <input type="submit" value="Se connecter">
+            <label for="userIdentifier">Nom d'utilisateur ou Email :</label>
+            <input type="text" name="userIdentifier" id="userIdentifier" placeholder="Nom d'utilisateur ou Email"><br>
+            <label for="userPassword">Mot de passe :</label>
+            <input type="password" name="userPassword" id="userPassword" placeholder="Mot de passe"><br>
+            <input type="submit" value="Se connecter">
             </form>
-            <p>Ou plutôt : <a href="/profil/signup.php?from=<?= $from; ?>">inscription</a></p>
+            <div class="signup-link">
+        <p>Vous n'avez pas de compte ? <a href="/profil/signup.php?from=<?= $from; ?>">Inscription</a></p>
+    </div>        
         </main>
 <?php
     require_once(DOCUMENT_ROOT . 'footer.php');
