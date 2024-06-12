@@ -1,4 +1,23 @@
 <?php
+
+    extract($_POST);
+
+    $jardinParcelles = [];
+    foreach ($plotNumber as $key => $number) {
+        $number = intval($number);
+        $surface = intval($plotSurface[$key]);
+
+        //$jardinParcelles[$key] = ["number" => $number, "surface" => $surface];
+
+        if(!isset($jardinParcelles[$surface])) $jardinParcelles[$surface] = 0;
+        $jardinParcelles[$surface] += $number;
+
+    }
+
+    var_dump($jardinParcelles);
+
+    die();
+
     session_start();
 
     if(empty($_SESSION["user_id"])){

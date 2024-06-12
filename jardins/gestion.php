@@ -72,17 +72,19 @@
             <br><br>
             <h2>Ajouter un jardin</h2>
             <script defer src="/assets/js/addressCheck.js"></script>
-            <form action="proc/add.php" method="post" enctype="multipart/form-data">
+            <script defer src="/assets/js/plotAdder.js"></script>
+            <form id="addGardenForm" action="proc/add.php" method="post" enctype="multipart/form-data">
                 <input type="text" name="jardinLocation" id="jardinLocation" placeholder="Adresse du jardin" oninput="addressCheck(this.value);"><br>
                 <div id="propositionsAdresses">
 
                 </div><br>
                 <input type="file" name="jardinPicture"><br>
                 <input type="checkbox" name="jardinAvailable" id="jardinAvailable">
+                
                 <label for="jardinAvailable">Publier le jardin dès son ajout</label><br>
-                <input type="checkbox" name="addParcelles" id="addParcelles">
-                <label for="addParcelles">Ajouter des parcelles après l'ajout</label><br>
-                <input type="submit" value="Ajouter">
+                <a id="addPlotButton">Ajouter une parcelle</a><br>
+
+                <input id="submitGardenButton" type="submit" value="Ajouter le jardin">
             </form>
         </main>
 <?php
