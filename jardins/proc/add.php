@@ -1,23 +1,4 @@
 <?php
-
-    extract($_POST);
-
-    $jardinParcelles = [];
-    foreach ($plotNumber as $key => $number) {
-        $number = intval($number);
-        $surface = intval($plotSurface[$key]);
-
-        //$jardinParcelles[$key] = ["number" => $number, "surface" => $surface];
-
-        if(!isset($jardinParcelles[$surface])) $jardinParcelles[$surface] = 0;
-        $jardinParcelles[$surface] += $number;
-
-    }
-
-    var_dump($jardinParcelles);
-
-    die();
-
     session_start();
 
     if(empty($_SESSION["user_id"])){
@@ -34,6 +15,19 @@
     if(empty($_POST['jardinLocation'])) errorMsg("Spécifiez une adresse pour votre jardin");
 
     extract($_POST);
+
+    $jardinParcelles = [];
+    if(@is_array($plotNumber)){
+        foreach($plotNumber as $key => $number) {
+            $number = intval($number);
+            $surface = intval($plotSurface[$key]);
+
+            if(!is_nan($number) && !is_nan($surface)){
+                if(!isset($jardinParcelles[$surface])) $jardinParcelles[$surface] = 0;
+                $jardinParcelles[$surface] += $number;
+            }
+        }
+    }
 
     $userId = $_SESSION["user_id"];
 
@@ -90,6 +84,28 @@
     $query->bindParam(':jardingps', $gps);
 
     $res = $query->execute();
+
+    $userJardins = findUserJardins("jardins", $userId);
+    $jardinId = $userJardins[count($userJardins) -1]["jardin_id"];
+
+    //ajout des parcelles si nécessaire
+
+    if(count($jardinParcelles) > 0){
+        foreach ($jardinParcelles as $surface => $number) {
+
+            for ($i=0; $i < $number; $i++) { 
+                $sql = "INSERT INTO parcelles(parcelle_taille, parcelle_available, jardin_id) VALUES (:parcelletaille, :parcelleavailable, :jardinid)";
+
+                $query = $db->prepare($sql);
+
+                $query->bindParam(':parcelletaille', $surface);
+                $query->bindParam(':parcelleavailable', $jardinAvailable);
+                $query->bindParam(':jardinid', $jardinId);
+
+                $res = $query->execute();
+            }
+        }
+    }
 
     if($res === true){
 

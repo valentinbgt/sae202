@@ -30,6 +30,11 @@
                     foreach($jardins as $jardin){
                         extract($jardin);
                         $jardin_enc_id = urlencode(base64_encode($jardin_id));
+                            $sql = "SELECT COUNT(parcelle_id) AS nb_parcelles FROM parcelles WHERE jardin_id = '$jardin_id'";
+                            $query = $db->prepare($sql);
+                            $query->execute();
+                            $res = $query->fetch();
+                            $nbParcelles = $res["nb_parcelles"];
             ?>
 
                         <img src="/jardins/picture.php?id=<?= $jardin_enc_id ?>" alt="Photo du jardin <?= $jardin_location; ?>" height="50px">
@@ -37,8 +42,8 @@
                             <?= $jardin_location ?><br>
                             Coordonnées GPS : <?php if(!empty($jardin_gps)) echo $jardin_gps; ?><br>
                             <?php if(!$jardin_available) echo "inactif - "; ?>
-                            <a href="update.php?id=<?= $jardin_enc_id; ?>">modifier</a> - <a href="proc/delete.php?id=<?= $jardin_enc_id; ?>">supprimer</a>
-                            <p>parcelles :</p>
+                            <a href="update.php?id=<?= $jardin_enc_id; ?>">modifier</a> - <a <?php if($nbParcelles) echo "hidden" ?> href="proc/delete.php?id=<?= $jardin_enc_id; ?>">supprimer</a>
+                            <p><?= $nbParcelles ?> parcelles :</p>
                             <?php
                                 $sql = "SELECT * FROM `parcelles` WHERE `jardin_id`=:jardinid";
                                 $query = $db->prepare($sql);
@@ -51,18 +56,35 @@
                                         <p>Ce jardin n'as aucune parcelle configurée. - <a href="update.php?id=<?= $jardin_enc_id; ?>">ajouter une parcelle</a></p>
                                     <?php
                                 }else{
+                                    echo '<ul style="list-style: inside;">';
                                     foreach($res as $parcelle){
                                         extract($parcelle);
+                                        $parcelle_enc_id = urlencode(base64_encode($parcelle_id));
                                         if($parcelle_user_id === NULL){
                                             $parcelle_user = "Personne";
                                         }else $parcelle_user = getUserName($parcelle_user_id);
                                         ?>
-                                            <p> - <?= $parcelle_taille; ?>m² - <?= $parcelle_typePlantation ?> - Utilisé par : <?= $parcelle_user; ?></p>
+                                            <li>
+                                                <?= $parcelle_taille; ?>m² - 
+                                                <?= $parcelle_typePlantation ?><?php if($parcelle_typePlantation) echo ' - '; ?>
+                                                <?php 
+                                                    if($parcelle_user != "Personne" && !$parcelle_validation) echo "Demandé";
+                                                    else echo "Utilisé";
+                                                ?> 
+                                                par : <?= $parcelle_user; ?>
+                                                <?php if($parcelle_user == "Personne"){ ?> <a href="proc/delete.php?parcelle=<?= $parcelle_enc_id ?>">supprimer</a> <?php } ?>
+                                                <?php
+                                                    if($parcelle_user != "Personne" && !$parcelle_validation){?>
+                                                        accepter refuser
+                                                    <?php }
+                                                ?>
+                                            </li>
                                         <?php
                                     }
+                                    echo '</ul>';
                                 }
                             ?>
-                        </p>
+                        </p><br><br>
 
             <?php
                     }
@@ -82,7 +104,7 @@
                 <input type="checkbox" name="jardinAvailable" id="jardinAvailable">
                 
                 <label for="jardinAvailable">Publier le jardin dès son ajout</label><br>
-                <a id="addPlotButton">Ajouter une parcelle</a><br>
+                <a id="addPlotButton">Ajouter des parcelles</a><br>
 
                 <input id="submitGardenButton" type="submit" value="Ajouter le jardin">
             </form>
