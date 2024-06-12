@@ -167,6 +167,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    width: 100%;
 }
 
 #signForm .formBox {
@@ -176,13 +177,6 @@ footer {
     justify-content: center;
     margin: 10px 0;
     width: 50%;
-    min-width: 380px;
-}
-
-@media screen and (max-width: 1350px){
-    #signForm .formBox {
-        width: 100%;
-    }
 }
 
 #signForm input[type=text],
@@ -190,12 +184,24 @@ footer {
 #signForm input[type=password]{
     margin: 6px;
     padding: 8px 12px;
-    font-size: 18px;
+    font-size: 17px;
     border: solid 2px #7FB096;
     border-radius: 6px;
     font-weight: 500;
     width: 80%;
     caret-color: #7FB096;
+}
+
+@media screen and (max-width: 1350px){
+    #signForm .formBox {
+        width: 100%;
+    }
+
+    #signForm input[type=text],
+    #signForm input[type=email],
+    #signForm input[type=password]{
+        width: 90%;
+    }
 }
 
 #signForm input[type=submit],

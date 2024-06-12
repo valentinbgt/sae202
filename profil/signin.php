@@ -16,15 +16,32 @@
             <div class="topHeroImage">
                 <h1>Connexion</h1>
             </div>
-            <form action="/profil/inc/signin.proc.php" method="post" enctype="multipart/form-data">
-            <label for="userIdentifier">Nom d'utilisateur ou Email :</label>
-            <input type="text" name="userIdentifier" id="userIdentifier" placeholder="Nom d'utilisateur ou Email"><br>
-            <label for="userPassword">Mot de passe :</label>
-            <input type="password" name="userPassword" id="userPassword" placeholder="Mot de passe"><br>
-            <input type="submit" value="Se connecter">
+            <form id="signForm" action="/profil/inc/signin.proc.php" method="post" enctype="multipart/form-data">
+                
+                <div class="formDouble">
+                    <div class="formBox">
+                        <label for="userIdentifier">Nom d'utilisateur ou Email :</label>
+                        <input type="text" name="userIdentifier" id="userIdentifier" placeholder="emma.martin">
+                    </div>
+                </div>
+                
+                <div class="formDouble">
+                    <div class="formBox">
+                        <label for="userPassword">Mot de passe :</label>
+                        <input type="password" name="userPassword" id="userPassword" placeholder="************">
+                    </div>
+                </div>
+
+                <div class="formDouble">
+                    <div class="formBox">
+                        <input type="submit" value="Se connecter">
+                    </div>
+                </div>
+
+                <div class="signup-link">
+                    <p>Vous n'avez pas de compte ? <a href="/profil/signup.php?from=<?= $from; ?>">S'inscrire</a></p>
+                </div>
             </form>
-            <div class="signup-link">
-        <p>Vous n'avez pas de compte ? <a href="/profil/signup.php?from=<?= $from; ?>">Inscription</a></p>
     </div>        
         </main>
 <?php
