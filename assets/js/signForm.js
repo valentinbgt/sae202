@@ -5,6 +5,9 @@ const picturePreview = document.getElementById("picturePreview");
 addPictureButton.addEventListener("click", () => {
     pictureInput.click();
 })
+picturePreview.addEventListener("click", () => {
+    pictureInput.click();
+})
 
 pictureInput.addEventListener("change", () => {
     const file = pictureInput.files[0];
