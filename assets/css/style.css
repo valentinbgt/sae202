@@ -367,6 +367,15 @@ footer {
     margin: 0 auto;
 }
 
+#propositionsAdresses{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+#propositionsAdresses:hover{
+    cursor: pointer;
+}
+
 .footerNav ul {
     list-style: none;
     padding: 0;

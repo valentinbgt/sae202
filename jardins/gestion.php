@@ -123,6 +123,7 @@
             <script defer src="/assets/js/addressCheck.js"></script>
             <script defer src="/assets/js/plotAdder.js"></script>
             <script defer src="/assets/js/customCheckboxes.js"></script>
+            <script defer src="/assets/js/addGardenForm.js"></script>
             <form id="addGardenForm" action="proc/add.php" method="post" enctype="multipart/form-data">
                 <div class="formDouble">
                     <div class="formBox">

@@ -44,9 +44,6 @@ function sendRequest(){
 }
 
 function updateAddressInput(text){
-    input = document.getElementById("jardinLocation");
-    propositions = document.getElementById("propositionsAdresses");
-
     input.value = text;
     propositions.innerHTML = "";
 }
