@@ -278,6 +278,9 @@ footer {
     margin-bottom: 40px;
 }
 
+
+
+
 .jardinsContainer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -343,6 +346,14 @@ footer {
     margin: auto 10px;
 }
 
+.carteJardin .jardinDetails .actif{
+    color: #0a6847;
+}
+
+.carteJardin .jardinDetails .inactif{
+    color: rgb(134, 28, 28);
+}
+
 .carteJardin .jardinActions {
     margin: 0 auto;
     margin-top: 6px;
@@ -354,10 +365,19 @@ footer {
 .carteJardin .jardinActions a{
     text-decoration: none;
     background-color: #7aba78;
+    border: solid 2px #7aba78;
     color: white;
     padding: 10px 12px;
     margin: 8px;
     border-radius: 8px;
+    transition: 0.1s all ease-out;
+}
+
+.carteJardin .jardinActions a:hover{
+    background-color: #f0f0ee;
+    color: black;
+    transition: 0.2s all ease-out;
+    font-weight: 500;
 }
 
 

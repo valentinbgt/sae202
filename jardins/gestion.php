@@ -54,7 +54,7 @@
                                 if($jardin_available) $jardin_status = "actif";
                                 else $jardin_status = "inactif";
                             ?>
-                            <p><?= $jardin_status ?></p>
+                            <p class="<?= $jardin_status ?>"><?= $jardin_status ?></p>
                         </div>
                         
                         <div class="jardinActions">
