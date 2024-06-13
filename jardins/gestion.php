@@ -16,6 +16,7 @@
             <div class="topHeroImage">
                 <h1>Gestion</h1>
             </div>
+            <h2 class="pageSeconTitle">Gestion des jardins</h2>
             <div class="jardinsContainer">
                 <?php
                     $jardins = findUserJardins('jardins', $userId);

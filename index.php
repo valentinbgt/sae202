@@ -7,6 +7,7 @@
             <div class="topHeroImage">
                 <h1>Seed</h1>
             </div>
+            <h2 class="pageSeconTitle">Pour un meilleur avenir, <span class="more-sugar">Seed</span>.</h2>
         </main>
 <?php
     require_once(DOCUMENT_ROOT . 'footer.php');

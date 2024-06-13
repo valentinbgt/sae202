@@ -9,14 +9,12 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-html, body {
-    height: 100%;
-}
-
 body {
     display: flex;
     flex-direction: column;
     background-color: var(--yellow-background);
+    position: relative;
+    min-height: 100vh;
 }
 
 h1 {
@@ -25,6 +23,20 @@ h1 {
     margin: 0 auto;
     font-size: 75px;
     color: var(--yellow-background);
+}
+
+h2.pageSeconTitle{
+    margin: 30px auto;
+    width: fit-content;
+    font-size: 34px;
+    font-weight: 700;
+    text-wrap: nowrap;
+    text-align: center;
+}
+
+h2.pageSeconTitle span.more-sugar{
+    font-family: 'MoreSugar';
+    font-size: 44px;
 }
 
 nav {
@@ -73,7 +85,7 @@ nav {
 #content {
     flex: 1;
     padding-top: calc(80px + 6px); /* Add nav height + border */
-    padding-bottom: 100px; /* Space for the footer */
+    padding-bottom: calc(300px + 30px); /* Space for the footer + marge */
     box-sizing: border-box;
 }
 
@@ -106,9 +118,13 @@ nav {
 footer {
     background-color: #0a6847;
     color: white;
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
     margin-top: auto;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 300px;
 }
 
 .footerContainer {
@@ -268,6 +284,7 @@ footer {
     text-decoration: none;
     color: #7FB096;
     font-weight: 600;
+    text-wrap: nowrap;
 }
 
 .footerNav ul {
@@ -482,6 +499,10 @@ footer {
 
     h1 {
         font-size: 15vw;
+    }
+
+    h2.pageSeconTitle{
+        font-size: 7vw;
     }
 
     footer {
