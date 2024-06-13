@@ -119,24 +119,43 @@
                 ?>
             </div>
 
-            
-
-            <br><br>
-            <h2>Ajouter un jardin</h2>
+            <h2 class="pageSeconTitle">Ajouter un jardin</h2>
             <script defer src="/assets/js/addressCheck.js"></script>
             <script defer src="/assets/js/plotAdder.js"></script>
+            <script defer src="/assets/js/customCheckboxes.js"></script>
             <form id="addGardenForm" action="proc/add.php" method="post" enctype="multipart/form-data">
-                <input type="text" name="jardinLocation" id="jardinLocation" placeholder="Adresse du jardin" oninput="addressCheck(this.value);"><br>
-                <div id="propositionsAdresses">
+                <div class="formDouble">
+                    <div class="formBox">
+                        <label for="jardinLocation">Adresse du jardin</label>
+                        <input type="text" name="jardinLocation" id="jardinLocation" placeholder="9 rue Québec, 10430 Rosières-près-Troyes, France" oninput="addressCheck(this.value);">
+                        <div id="propositionsAdresses"></div>  
+                    </div>              
+                        
+                    <div class="formBox">
+                        <label for="jardinPicture">Photo du jardin </label>
+                        <input hidden type="file" name="jardinPicture" id="jardinPicture">
+                            <div id="picturePreviewContainer">
+                                <img hidden="" id="picturePreview" alt="Prévisualisation de la photo de profil" src="/assets/img/default_jardin.webp">
+                                <p class="addPicture" id="addPicture">Ajouter une photo</p>
+                            </div>
+                    </div>
+                </div>
 
-                </div><br>
-                <input type="file" name="jardinPicture"><br>
-                <input type="checkbox" name="jardinAvailable" id="jardinAvailable">
-                
-                <label for="jardinAvailable">Publier le jardin dès son ajout</label><br>
-                <a id="addPlotButton">Ajouter des parcelles</a><br>
+                <div class="formDouble">
+                    <div class="formBox">
+                        <a id="addPlotButton">Ajouter une parcelle</a>
+                        <div class="plotsList"></div>
+                    </div>
 
-                <input id="submitGardenButton" type="submit" value="Ajouter le jardin">
+                    <div class="formBox">
+                        <div class="publish">
+                            <input hidden type="checkbox" name="jardinAvailable" id="jardinAvailable">
+                            <div class="customCheckBox" data-target="jardinAvailable"></div>
+                            <label for="jardinAvailable">Publier le jardin</label>
+                        </div>
+                        <input id="submitGardenButton" type="submit" value="Ajouter le jardin">
+                    </div>
+                </div>
             </form>
         </main>
 <?php

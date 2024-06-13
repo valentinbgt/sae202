@@ -25,18 +25,30 @@ h1 {
     color: var(--yellow-background);
 }
 
-h2.pageSeconTitle{
+h2.pageSeconTitle {
     margin: 30px auto;
     width: fit-content;
     font-size: 34px;
     font-weight: 700;
-    text-wrap: nowrap;
     text-align: center;
 }
 
-h2.pageSeconTitle span.more-sugar{
+h2.pageSeconTitle span.more-sugar {
     font-family: 'MoreSugar';
     font-size: 44px;
+}
+
+.customCheckBox{
+    width: 22px;
+    height: 22px;
+    background-color: #f0f0ee;
+    display: inline-block;
+    border: solid 2px #7FB096;
+    border-radius: 6px;
+    margin: 6px;
+}
+.customCheckBox.checked{
+    background-color: #7fb096;
 }
 
 nav {
@@ -69,7 +81,7 @@ nav {
     color: black;
     font-weight: 550;
     transition: font-weight 0.1s ease-out;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .navLink a:hover {
@@ -77,15 +89,17 @@ nav {
     transition: font-weight 0.2s ease-out;
 }
 
-.home-logo{
+.home-logo {
     height: 50px;
 }
 
 
 #content {
     flex: 1;
-    padding-top: calc(80px + 6px); /* Add nav height + border */
-    padding-bottom: calc(300px + 30px); /* Space for the footer + marge */
+    padding-top: calc(80px + 6px);
+    /* Add nav height + border */
+    padding-bottom: calc(300px + 30px);
+    /* Space for the footer + marge */
     box-sizing: border-box;
 }
 
@@ -106,9 +120,9 @@ nav {
     justify-content: center;
     text-align: center;
     backdrop-filter: brightness(0.75);
-    -webkit-user-select: none; 
+    -webkit-user-select: none;
     -ms-user-select: none;
-    user-select: none; 
+    user-select: none;
 }
 
 .cls-1 {
@@ -141,24 +155,25 @@ footer {
     font-size: 24px;
     margin: 0 10px;
     transition: color 0.6s, background-color 0.6s;
-    background-color: white; 
-    color: #0a6847; 
-    padding: 10px; 
-    border-radius: 50%; 
+    background-color: white;
+    color: #0a6847;
+    padding: 10px;
+    border-radius: 50%;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 44px; 
-    height: 44px; 
-    text-decoration: none; 
+    width: 44px;
+    height: 44px;
+    text-decoration: none;
 }
 
 .socialIcons a:hover {
-    background-color: #7aba78; 
-    color: white; 
+    background-color: #7aba78;
+    color: white;
 }
 
-#signForm{
+#signForm,
+#addGardenForm {
     border: solid 3px #7FB096;
     padding: 20px 25px;
     width: 60%;
@@ -167,26 +182,33 @@ footer {
     background-color: #F0F0EE;
     border-radius: 25px;
 }
+#addGardenForm{
+    margin-top: 0;
+}
 
-#signForm label {
+#signForm label,
+#addGardenForm label {
     font-weight: 500;
     font-size: 20px;
     text-wrap: nowrap;
 }
 
-#signForm span.thin{
+#signForm span.thin,
+#addGardenForm span.thin {
     font-weight: 400;
     font-size: 18px;
 }
 
-#signForm .formDouble{
+#signForm .formDouble,
+#addGardenForm .formDouble {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
 }
 
-#signForm .formBox {
+#signForm .formBox,
+#addGardenForm .formBox {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -197,7 +219,8 @@ footer {
 
 #signForm input[type=text],
 #signForm input[type=email],
-#signForm input[type=password]{
+#signForm input[type=password],
+#addGardenForm input[type=text] {
     margin: 6px;
     padding: 8px 12px;
     font-size: 17px;
@@ -208,20 +231,11 @@ footer {
     caret-color: #7FB096;
 }
 
-@media screen and (max-width: 1350px){
-    #signForm .formBox {
-        width: 100%;
-    }
-
-    #signForm input[type=text],
-    #signForm input[type=email],
-    #signForm input[type=password]{
-        width: 90%;
-    }
-}
-
 #signForm input[type=submit],
-#signForm p.addPicture{
+#signForm p.addPicture,
+#addGardenForm input[type=submit],
+#addGardenForm p.addPicture,
+#addGardenForm a#addPlotButton {
     margin: 6px auto;
     padding: 14px 20px;
     font-size: 20px;
@@ -233,19 +247,31 @@ footer {
     transition: all 0.1s ease-out;
 }
 
-#signForm p.addPicture{
+#signForm p.addPicture,
+#addGardenForm p.addPicture,
+#addGardenForm a#addPlotButton {
     text-wrap: nowrap;
     padding: 12px;
     font-size: 18px;
     font-weight: 450;
     margin: 12px;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+#addGardenForm a#addPlotButton{
+    margin: 12px auto;
 }
 
 #signForm input[type=submit]:hover,
-#signForm p.addPicture:hover{
+#signForm p.addPicture:hover,
+#addGardenForm input[type=submit]:hover,
+#addGardenForm p.addPicture:hover,
+#addGardenForm a#addPlotButton:hover {
     transition: all 0.2s ease-out;
     cursor: pointer;
     background-color: transparent;
@@ -253,12 +279,13 @@ footer {
     border: solid 2px #7FB096;
 }
 
-#signForm input[type=submit]:hover{
+#signForm input[type=submit]:hover {
     font-weight: 600;
 }
 
-#signForm #picturePreview{
-    height: 80px; width: 80px;
+#signForm #picturePreview {
+    height: 80px;
+    width: 80px;
     margin: 12px;
     border: solid 1px #7FB096;
     border-radius: 50%;
@@ -266,25 +293,74 @@ footer {
     object-fit: cover;
 }
 
-#signForm #picturePreviewContainer{
+#addGardenForm #picturePreview {
+    height: 80px;
+    aspect-ratio: 15/8;
+    margin: 12px;
+    border: solid 1px #7FB096;
+    border-radius: 8px;
+    display: inline-block;
+    object-fit: cover;
+}
+
+#signForm #picturePreviewContainer,
+#addGardenForm #picturePreviewContainer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
 }
 
-#signForm .signup-link p{
+#signForm .signup-link p {
     margin: 0 auto;
     width: fit-content;
     font-size: 16px;
     font-weight: 450;
 }
 
-#signForm .signup-link p a{
+#signForm .signup-link p a {
     text-decoration: none;
     color: #7FB096;
     font-weight: 600;
     text-wrap: nowrap;
+}
+
+#addGardenForm .plot{
+    font-size: 20px;
+    font-weight: 430;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+#addGardenForm .plot input{
+    width: 50px;
+    background-color: #F0F0EE;
+    border: solid 1px #7FB096;
+    padding: 0 3px;
+    font-size: 18px;
+    font-weight: 500;
+    
+}
+
+#addGardenForm .plot input:focus{
+    outline: none;
+}
+
+#addGardenForm .plot span{
+    text-wrap: nowrap;
+}
+
+#addGardenForm .publish{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#addGardenForm .plotsList{
+    margin: 0 auto;
 }
 
 .footerNav ul {
@@ -298,16 +374,45 @@ footer {
 
 
 
-.jardinsContainer{
+.jardinsContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: 260px;
     grid-gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    margin-bottom: 60px;
 }
 
-.carteJardin{
+@media screen and (max-width: 1350px) {
+    #signForm .formBox,
+    #addGardenForm .formBox {
+        width: 100%;
+    }
+
+    #signForm input[type=text],
+    #signForm input[type=email],
+    #signForm input[type=password],
+    #addGardenForm input[type=text] {
+        width: 90%;
+    }
+
+    .jardinsContainer {
+        grid-template-columns: 1fr 1fr;
+        width: 95%;
+        max-width: 900px;
+    }
+}
+@media screen and (max-width: 700px){
+    #addGardenForm #addPicture{
+        width: 33%;
+        max-width: 200px;
+        text-wrap: wrap;
+        text-align: center;
+    }
+}
+
+.carteJardin {
     border: solid 2px #7fb096;
     border-radius: 12px;
     padding: 20px;
@@ -317,14 +422,16 @@ footer {
     background-color: #f0f0ee;
 }
 
-.carteJardin img.photoJardin{
+.carteJardin img.photoJardin {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
     object-fit: cover;
 }
 
-.carteJardin .jardinTitle{
+.carteJardin .jardinTitle {
     font-weight: 600;
     font-size: 18px;
     text-wrap: nowrap;
@@ -334,7 +441,7 @@ footer {
     margin: 0 auto;
 }
 
-.carteJardin .jardinGPS{
+.carteJardin .jardinGPS {
     font-weight: 400;
     font-size: 14px;
     color: rgb(155, 155, 155);
@@ -349,25 +456,25 @@ footer {
     font-weight: 500;
 }
 
-.carteJardin .separator{
+.carteJardin .separator {
     width: 100px;
     height: 1px;
     background: gray;
     margin: 6px auto;
 }
 
-.carteJardin .jardinDetails .separator{
+.carteJardin .jardinDetails .separator {
     width: 1px;
     height: 14px;
     background: gray;
     margin: auto 10px;
 }
 
-.carteJardin .jardinDetails .actif{
+.carteJardin .jardinDetails .actif {
     color: #0a6847;
 }
 
-.carteJardin .jardinDetails .inactif{
+.carteJardin .jardinDetails .inactif {
     color: rgb(134, 28, 28);
 }
 
@@ -379,10 +486,10 @@ footer {
     align-items: center;
 }
 
-.carteJardin .jardinActions a{
+.carteJardin .jardinActions a {
     text-decoration: none;
-    background-color: #7aba78;
-    border: solid 2px #7aba78;
+    background-color: #7FB096;
+    border: solid 2px #7FB096;
     color: white;
     padding: 10px 12px;
     margin: 8px;
@@ -390,7 +497,7 @@ footer {
     transition: 0.1s all ease-out;
 }
 
-.carteJardin .jardinActions a:hover{
+.carteJardin .jardinActions a:hover {
     background-color: #f0f0ee;
     color: black;
     transition: 0.2s all ease-out;
@@ -407,20 +514,20 @@ footer {
 }
 
 .footerNav a:hover {
-    color: #7aba78; 
+    color: #7aba78;
 }
 
 .footerNav .contact-button {
     background-color: white;
     color: #0a6847;
     padding: 10px 20px;
-    border-radius: 20px; 
-    font-weight: 700; 
-    transition: background-color 0.6s, color 0.6s; 
+    border-radius: 20px;
+    font-weight: 700;
+    transition: background-color 0.6s, color 0.6s;
 }
 
 .footerNav .contact-button:hover {
-    background-color: #7aba78; 
+    background-color: #7aba78;
     color: white;
 }
 
@@ -432,7 +539,7 @@ footer {
     height: 80px;
     max-width: 100%;
     display: block;
-    margin: 0 auto 20px; 
+    margin: 0 auto 20px;
 }
 
 .footerBottom p {
@@ -466,7 +573,7 @@ footer {
     }
 
     .navLink a:active {
-        color: #A7E6FF; 
+        color: #A7E6FF;
     }
 
     .navLink {
@@ -495,13 +602,12 @@ footer {
         height: 50px;
     }
 
-    
 
     h1 {
         font-size: 15vw;
     }
 
-    h2.pageSeconTitle{
+    h2.pageSeconTitle {
         font-size: 7vw;
     }
 
@@ -509,19 +615,40 @@ footer {
         display: none;
     }
 
-    #signForm{
+    .jardinsContainer {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+
+    #signForm,
+    #addGardenForm {
         width: 80%;
         margin: 30px auto;
     }
 
-    #signForm .formBox{
+    #signForm .formBox,
+    #addGardenForm .formBox {
         min-width: 0;
     }
 
     #signForm input[type=text],
     #signForm input[type=email],
-    #signForm input[type=password]{
+    #signForm input[type=password],
+    #addGardenForm input[type=text] {
         width: 95%;
+    }
+
+    #addGardenForm #picturePreviewContainer{
+        flex-direction: column;
+        margin-top: 5px;
+    }
+    #addGardenForm #addPicture {
+        text-wrap: nowrap;
+        width: fit-content;
+    }
+
+    #addGardenForm .plotsList{
+        margin-bottom: 10px;
     }
 
     form {
@@ -532,7 +659,7 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-    
+
     form input[type="text"],
     form input[type="email"],
     form input[type="password"],
@@ -552,10 +679,10 @@ footer {
     form input[type="password"]:focus,
     form input[type="file"]:focus,
     form input[type="submit"]:focus {
-        border-color: black; 
-        outline: none; 
+        border-color: black;
+        outline: none;
     }
-    
+
     form input[type="submit"] {
         background-color: #7FB096;
         color: white;
@@ -564,22 +691,22 @@ footer {
         cursor: pointer;
         transition: background-color 0.3s;
     }
-    
+
     form input[type="submit"]:hover {
         background-color: #5A8A73;
     }
-    
+
     form p {
         text-align: center;
         margin-top: 15px;
     }
-    
+
     form p a {
         color: #7FB096;
         text-decoration: none;
         font-weight: bold;
     }
-    
+
     .signup-link {
         text-align: center;
         margin-bottom: 20px;
@@ -607,7 +734,7 @@ footer {
         width: 150px;
         height: 150px;
         border-radius: 50%;
-        border: 5px solid #7FB096; 
+        border: 5px solid #7FB096;
     }
 
     h2 {
@@ -620,10 +747,10 @@ footer {
         justify-content: center;
         align-items: center;
     }
-    
+
     .stars svg {
-        width: 25px; 
-        height: 25px; 
+        width: 25px;
+        height: 25px;
         margin: 0 3px;
         margin-bottom: 50px;
     }
@@ -631,8 +758,10 @@ footer {
     /* Style du bouton Paramètres */
     .dropdown {
         position: relative;
-        display: flex; /* Utilisation de flexbox */
-        justify-content: center; /* Centre le contenu horizontalement */
+        display: flex;
+        /* Utilisation de flexbox */
+        justify-content: center;
+        /* Centre le contenu horizontalement */
     }
 
     .dropbtn {
@@ -656,11 +785,13 @@ footer {
         position: absolute;
         background-color: #f9f9f9;
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
-        top: 100%; /* Positionne le menu déroulant en dessous du bouton */
+        top: 100%;
+        /* Positionne le menu déroulant en dessous du bouton */
         left: 50%;
-        transform: translateX(-50%); /* Déplace le menu déroulant de moitié de sa propre largeur vers la gauche */
+        transform: translateX(-50%);
+        /* Déplace le menu déroulant de moitié de sa propre largeur vers la gauche */
     }
 
     /* Affichage du menu déroulant lorsque le bouton est survolé */
