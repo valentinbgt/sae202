@@ -303,6 +303,10 @@ footer {
     object-fit: cover;
 }
 
+#picturePreview:hover{
+    cursor: pointer;
+}
+
 #signForm #picturePreviewContainer,
 #addGardenForm #picturePreviewContainer {
     display: flex;
