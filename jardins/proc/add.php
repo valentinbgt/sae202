@@ -68,7 +68,7 @@
         } else errorMsg("Le type de fichier sélectionné n'est pas une image.");
     }
 
-    $jardinAvailable = isset($jardinAvailable); //vérifier si la check box est on
+    $jardinAvailable = isset($jardinAvailable) == true; //vérifier si la check box est on
 
     require('db.inc.php');
     $db = dbConn();
