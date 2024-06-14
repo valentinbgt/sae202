@@ -1,4 +1,4 @@
-<?php
+<?php 
     session_start();
     ini_set( 'display_errors', 1 );
     error_reporting( E_ALL );
@@ -22,10 +22,11 @@
 
     if(!filter_var($contactEmail, FILTER_VALIDATE_EMAIL)) errorMsg("L'adresse email renseignée n'est pas valide.");
 
+    $senderEmail = "mmi23a02@mmi-troyes.fr";
     $agentEmail = "valentin.beauget@etudiant.univ-reims.fr";
 
     //FIRST MAIL
-    $from = $agentEmail;
+    $from = $senderEmail;
     $to = $agentEmail;
     $subject = $contactObject . " - Contact Seed";
 
@@ -33,7 +34,7 @@
     $message .= "<h2>$contactName ($contactEmail) : $contactObject</h2>";
     $message .= "<p>$contactMessage</p>";
 
-    $headers = "From: " . $agentEmail;
+    $headers = "From: " . $from;
     $headers .= "\r\nReply-To: " . $contactEmail;
     $headers .= "\r\nContent-Type: text/html; charset=UTF-8";
 
@@ -41,7 +42,7 @@
     $mail_status1 = mail($to,$subject,$message, $headers);
 
     //CONFIRM EMAIL
-    $from = $agentEmail;
+    $from = $senderEmail;
     $to = $contactEmail;
     $subject = "Message reçu - Seed";
 
@@ -50,7 +51,7 @@
     $message .= "<h3>$contactName ($contactEmail) : $contactObject</h3>";
     $message .= "<p>$contactMessage</p>";
 
-    $headers = "From: " . $agentEmail;
+    $headers = "From: " . $from;
     $headers .= "\r\nReply-To: " . $agentEmail;
     $headers .= "\r\nContent-Type: text/html; charset=UTF-8";
 
