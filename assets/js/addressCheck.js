@@ -6,6 +6,8 @@ const input = document.getElementById("jardinLocation");
 const propositions = document.getElementById("propositionsAdresses");
 
 function addressCheck(text) {
+    if(input.value) propositions.innerHTML = "...";
+    
     encodeURI(text);
     
 
