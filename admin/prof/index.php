@@ -26,7 +26,7 @@
     $_SESSION["user_name"] = $user_name;
     $_SESSION["user_type"] = $user_type;
     
-    if(!empty($_SESSION["from"])) $from = urldecode(base64_decode($_SESSION["from"]));
+    if(!empty($_GET["from"])) $from = urldecode(base64_decode($_GET["from"]));
     else $from = "/";
 
     unset($_SESSION["from"]);
