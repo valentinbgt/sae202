@@ -398,6 +398,105 @@ footer {
     margin: 0 auto;
     margin-bottom: 60px;
 }
+.about-section {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.about-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-section p,
+.about-section ul {
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.about-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-section ul li {
+    margin-bottom: 10px;
+}
+
+.about-section a {
+    color: #7FB096;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Styles des sections */
+.legal-section {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Styles des titres */
+.legal-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px; /* Augmente la marge inférieure pour plus d'espace */
+}
+
+/* Styles des paragraphes et listes */
+.legal-section p,
+.legal-section ul {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify; /* Justifier le texte */
+    margin-bottom: 20px; /* Ajoute de l'espace entre les paragraphes */
+}
+
+/* Suppression des puces des listes */
+.legal-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Marges des éléments de liste */
+.legal-section ul li {
+    margin-bottom: 10px;
+}
+
+/* Style des liens */
+.legal-section a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+/* Styles des sections */
+.legal-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Styles des titres */
+.legal-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px; /* Augmente la marge inférieure pour plus d'espace */
+}
+
+/* Styles des paragraphes */
+.legal-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify; /* Justifier le texte */
+    margin-bottom: 20px; /* Ajoute de l'espace entre les paragraphes */
+}
+
+/* Style des liens */
+.legal-section a {
+    color: #1a73e8;
+    text-decoration: none;
+}
 
 @media screen and (max-width: 1350px) {
     #signForm .formBox,
@@ -562,7 +661,6 @@ footer {
 .footerBottom p {
     color: white;
 }
-
 
 /* Téléphone */
 
@@ -744,5 +842,33 @@ footer {
         margin-top: -20px;
         margin-bottom: 5px;
     }
+    .about-section {
+        margin-bottom: 50px;
+    }
 
+    .about-section h2 {
+        font-size: 20px;
+    }
+
+    .about-section p,
+    .about-section ul {
+        font-size: 14px;
+    }
+
+    .legal-section {
+        padding: 10px; /* Réduire le padding pour les petits écrans */
+    }
+
+    .legal-section h2 {
+        font-size: 20px;
+        margin-bottom: 16px; /* Ajustement de la marge pour petits écrans */
+        text-align: center;
+    }
+
+    .legal-section p,
+    .legal-section ul {
+        font-size: 14px;
+        margin-bottom: 50px; /* Ajustement de la marge pour petits écrans */
+        text-align: center;
+    }
 }

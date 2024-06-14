@@ -59,12 +59,12 @@
                         </div>
                         
                         <div class="jardinActions">
-                            <a href="update.php?id=<?= $jardin_enc_id; ?>">modifier</a>
+                            <a href="update.php?id=<?= $jardin_enc_id; ?>">Modifier</a>
 
                             <?php
                                 if(!$nbParcelles){
                                     ?>
-                                    <a href="proc/delete.php?id=<?= $jardin_enc_id; ?>">supprimer</a>
+                                    <a href="proc/delete.php?id=<?= $jardin_enc_id; ?>">Supprimer</a>
                                     <?php
                                 }
                             ?>
