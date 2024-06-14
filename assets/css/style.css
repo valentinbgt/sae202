@@ -98,8 +98,8 @@ nav {
     flex: 1;
     padding-top: calc(80px + 6px);
     /* Add nav height + border */
-    padding-bottom: calc(300px + 30px);
-    /* Space for the footer + marge */
+    padding-bottom: calc(300px + 40px + 30px);
+    /* Space for the footer + padding + marge */
     box-sizing: border-box;
 }
 

@@ -3,7 +3,8 @@
     define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/');
     require_once(DOCUMENT_ROOT . 'header.php');
 
-    $_SESSION["from"] = @$_GET["from"];
+    $_SESSION["from"] = "";
+    if(isset($_GET["from"])) $_SESSION["from"] = $_GET["from"];
 
     if(!empty($_SESSION["user_id"])){
         if(!empty($_GET["from"])) $from = urldecode(base64_decode($_GET["from"]));
@@ -42,7 +43,7 @@
                 </div>
 
                 <div class="signup-link">
-                    <p><a href="/gestion/prof?from=<?= $from; ?>">Connexion prof</a></p>
+                    <p><a href="/gestion/prof?from=<?= $_SESSION["from"]; ?>">Connexion prof</a></p>
                 </div>
             </form>
     </div>        
