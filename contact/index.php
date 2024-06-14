@@ -25,7 +25,7 @@
                     <input required type="email" name="contactObject" id="contactObject" placeholder="Demande de partenariat">
                 </div>
                 
-                <div class="formBox">
+                <div class="formBox textarea">
                     <label for="contactEmail">Adresse Email</label>
                     <textarea required name="contactMessage" id="contactMessage" placeholder="Bonjour,..."></textarea>
                 </div>

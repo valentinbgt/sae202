@@ -220,6 +220,9 @@ footer {
     margin: 10px 0;
     width: 50%;
 }
+#signForm .formBox.textarea{
+    width: 100%;
+}
 
 #signForm input[type=text],
 #signForm input[type=email],
@@ -234,6 +237,10 @@ footer {
     font-weight: 500;
     width: 80%;
     caret-color: #7FB096;
+}
+
+#signForm textarea{
+    width: 90%;
 }
 
 #signForm input[type=submit],
