@@ -22,7 +22,7 @@
 
     if(!filter_var($contactEmail, FILTER_VALIDATE_EMAIL)) errorMsg("L'adresse email renseignée n'est pas valide.");
 
-    $agentEmail = "mmi23a02@mmi-troyes.fr";
+    $agentEmail = "valentin.beauget@etudiant.univ-reims.fr";
 
     //FIRST MAIL
     $from = $contactEmail;
