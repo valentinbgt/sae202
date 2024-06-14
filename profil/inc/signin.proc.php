@@ -1,9 +1,6 @@
 <?php
     session_start();
 
-
-    var_dump($_POST);
-
     function errorMsg($msg){
         $_SESSION["errorMsg"] = $msg;
         header("location: ../signin.php");
