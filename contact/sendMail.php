@@ -34,7 +34,7 @@
     $message .= "<h2>$contactName ($contactEmail) : $contactObject</h2>";
     $message .= "<p>$contactMessage</p>";
 
-    $headers = "From: " . $agentEmail;
+    $headers = "From: " . $from;
     $headers .= "\r\nReply-To: " . $contactEmail;
     $headers .= "\r\nContent-Type: text/html; charset=UTF-8";
 
@@ -51,7 +51,7 @@
     $message .= "<h3>$contactName ($contactEmail) : $contactObject</h3>";
     $message .= "<p>$contactMessage</p>";
 
-    $headers = "From: " . $agentEmail;
+    $headers = "From: " . $from;
     $headers .= "\r\nReply-To: " . $agentEmail;
     $headers .= "\r\nContent-Type: text/html; charset=UTF-8";
 
