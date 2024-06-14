@@ -22,10 +22,11 @@
 
     if(!filter_var($contactEmail, FILTER_VALIDATE_EMAIL)) errorMsg("L'adresse email renseignée n'est pas valide.");
 
+    $senderEmail = "mmi23a02@mmi-troyes.fr";
     $agentEmail = "valentin.beauget@etudiant.univ-reims.fr";
 
     //FIRST MAIL
-    $from = $agentEmail;
+    $from = $senderEmail;
     $to = $agentEmail;
     $subject = $contactObject . " - Contact Seed";
 
@@ -41,7 +42,7 @@
     $mail_status1 = mail($to,$subject,$message, $headers);
 
     //CONFIRM EMAIL
-    $from = $agentEmail;
+    $from = $senderEmail;
     $to = $contactEmail;
     $subject = "Message reçu - Seed";
 
