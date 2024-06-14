@@ -31,9 +31,9 @@
     <body>
         <header>
             <nav>
-                <div class="navLink"><object data="/assets/img/svg/home.svg" type="image/svg+xml" class="navIcon"></object><a href="/"><span class="navLinkText"><img class="home-logo" src="/assets/img/svg/logo.svg"></img></span></a></div>
-                <div class="navLink"><object data="/assets/img/svg/fleur.svg" type="image/svg+xml" class="navIcon"></object><a href="/jardins"><span class="navLinkText">Jardins</span></a></div>
-                <div class="navLink"><object data="/assets/img/svg/bulles.svg" type="image/svg+xml" class="navIcon"></object><a href="/jardins/gestion.php"><span class="navLinkText">Gestion</span></a></div>
+                <div class="navLink"><object title="Accueil" data="/assets/img/svg/home.svg" type="image/svg+xml" class="navIcon"></object><a href="/"><span class="navLinkText"><img class="home-logo" src="/assets/img/svg/logo.svg"></img></span></a></div>
+                <div class="navLink"><object title="Jardin" data="/assets/img/svg/fleur.svg" type="image/svg+xml" class="navIcon"></object><a href="/jardins"><span class="navLinkText">Jardins</span></a></div>
+                <div class="navLink"><object title="Gestion" data="/assets/img/svg/bulles.svg" type="image/svg+xml" class="navIcon"></object><a href="/jardins/gestion.php"><span class="navLinkText">Gestion</span></a></div>
                 
                 <?php
                     if(empty($_SESSION["user_id"])){
