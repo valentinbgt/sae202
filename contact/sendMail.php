@@ -27,12 +27,39 @@
     //FIRST MAIL
     $from = $agentEmail;
     $to = $agentEmail;
-    $subject = $contactObject;
-    $message = $contactMessage;
-    $headers = "From: " . $agentEmail . "\r\n" . "Reply-To: " . $contactEmail . "\r\n";
+    $subject = $contactObject . " - Contact Seed";
 
-    $mail_status = mail($to,$subject,$message, $headers);
+    $message = "<h1>Contact - Seed</h1>";
+    $message .= "<h2>$contactName ($contactEmail) : $contactObject</h2>";
+    $message .= "<p>$contactMessage</p>";
 
-    var_dump($mail_status);
+    $headers = "From: " . $agentEmail;
+    $headers .= "\r\nReply-To: " . $contactEmail;
+    $headers .= "\r\nContent-Type: text/html; charset=UTF-8";
 
-    echo "L'email a été envoyé.";
+
+    $mail_status1 = mail($to,$subject,$message, $headers);
+
+    //CONFIRM EMAIL
+    $from = $agentEmail;
+    $to = $contactEmail;
+    $subject = "Message reçu - Seed";
+
+    $message = "<h1>Message reçu - Seed</h1>";
+    $message .= "<h2>Nous avons bien reçu votre demande.</h2>";
+    $message .= "<h3>$contactName ($contactEmail) : $contactObject</h3>";
+    $message .= "<p>$contactMessage</p>";
+
+    $headers = "From: " . $agentEmail;
+    $headers .= "\r\nReply-To: " . $agentEmail;
+    $headers .= "\r\nContent-Type: text/html; charset=UTF-8";
+
+
+    $mail_status2 = mail($to,$subject,$message, $headers);
+
+    if($mail_status1 && $mail_status2){
+        $_SESSION["errorMsg"] = "Le message a bien été envoyé.";
+        header("location: /");
+    }else{
+        errorMsg("Une erreur est survenue, le message n'a pas été envoyé.");
+    }
