@@ -130,7 +130,7 @@ nav {
 }
 
 footer {
-    background-color: #0a6847;
+    background-color: #7FB096;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -156,7 +156,7 @@ footer {
     margin: 0 10px;
     transition: color 0.6s, background-color 0.6s;
     background-color: white;
-    color: #0a6847;
+    color: #7FB096;
     padding: 10px;
     border-radius: 50%;
     display: inline-flex;
@@ -168,8 +168,9 @@ footer {
 }
 
 .socialIcons a:hover {
-    background-color: #7aba78;
+    background-color: black;
     color: white;
+    transition: color 0.6s, background-color 0.6s;
 }
 
 #signForm,
@@ -385,9 +386,6 @@ footer {
     justify-content: center;
 }
 
-
-
-
 .jardinsContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -524,25 +522,27 @@ footer {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
-    transition: color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .footerNav a:hover {
-    color: #7aba78;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .footerNav .contact-button {
     background-color: white;
-    color: #0a6847;
+    color: #7FB096;
     padding: 10px 20px;
     border-radius: 20px;
     font-weight: 700;
-    transition: background-color 0.6s, color 0.6s;
+    transition: color 0.6s, background-color 0.6s;
 }
 
 .footerNav .contact-button:hover {
-    background-color: #7aba78;
+    background-color: black;
     color: white;
+    transition: color 0.6s, background-color 0.6s;
 }
 
 .footerBottom {
