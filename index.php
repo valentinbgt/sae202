@@ -9,8 +9,6 @@
             </div>
             <h2 class="pageSeconTitle">Pour un meilleur avenir, <span class="more-sugar">Seed</span>.</h2>
                 <?php
-                // Définissez $_SESSION["user_displayName"] ici si l'utilisateur est connecté
-
                 if(isset($_SESSION["user_displayName"])) {
                     $userDisplayName = $_SESSION["user_displayName"];
                     echo "<h2>Bonjour, $userDisplayName.</h2>";
