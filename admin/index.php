@@ -18,8 +18,11 @@
     $db = dbConn();
 ?>
         <main>
-            <h1>Pannel admin</h1>
-            <br><br>
+            <div class="topHeroImage">
+                <h1>Pannel Admin</h1>
+            </div>
+
+            <h2 class="pageSeconTitle">Table utilisateurs</h2>
 
             <?php
                 $users = findAll('users');
@@ -45,6 +48,13 @@
                     }
                 }
             ?>
+
+
+            <h2 class="pageSeconTitle">Table Jardins</h2>
+            <p>Aucun jardin dispinible actuellement</p>
+
+            <h2 class="pageSeconTitle">Table Parcelles</h2>
+            <p>Aucune parcelle disponible actuellement</p>
         </main>
 <?php
     require_once(DOCUMENT_ROOT . 'footer.php');

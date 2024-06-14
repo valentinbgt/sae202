@@ -76,6 +76,7 @@ nav {
     background-position: center;
     background-size: cover;
     display: block;
+    border: solid 2px black;
 }
 
 .navLink a {
@@ -220,11 +221,15 @@ footer {
     margin: 10px 0;
     width: 50%;
 }
+#signForm .formBox.textarea{
+    width: 100%;
+}
 
 #signForm input[type=text],
 #signForm input[type=email],
 #signForm input[type=password],
-#addGardenForm input[type=text] {
+#addGardenForm input[type=text],
+#signForm textarea {
     margin: 6px;
     padding: 8px 12px;
     font-size: 17px;
@@ -233,6 +238,10 @@ footer {
     font-weight: 500;
     width: 80%;
     caret-color: #7FB096;
+}
+
+#signForm textarea{
+    width: 90%;
 }
 
 #signForm input[type=submit],
@@ -295,6 +304,16 @@ footer {
     border-radius: 50%;
     display: inline-block;
     object-fit: cover;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="file"]:focus,
+form input[type="submit"]:focus,
+form textarea:focus {
+    border-color: black;
+    outline: none;
 }
 
 #addGardenForm #picturePreview {
@@ -788,15 +807,6 @@ footer {
         border: 1px solid #7FB096;
         font-size: 16px;
         box-sizing: border-box;
-    }
-
-    form input[type="text"]:focus,
-    form input[type="email"]:focus,
-    form input[type="password"]:focus,
-    form input[type="file"]:focus,
-    form input[type="submit"]:focus {
-        border-color: black;
-        outline: none;
     }
 
     form input[type="submit"] {
