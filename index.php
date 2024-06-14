@@ -8,7 +8,15 @@
                 <h1>Seed</h1>
             </div>
             <h2 class="pageSeconTitle">Pour un meilleur avenir, <span class="more-sugar">Seed</span>.</h2>
-            <h2>Bonjour, <?= $_SESSION["user_displayName"] ?>.</h2>
-        </main>
+                <?php
+                // Définissez $_SESSION["user_displayName"] ici si l'utilisateur est connecté
+
+                if(isset($_SESSION["user_displayName"])) {
+                    $userDisplayName = $_SESSION["user_displayName"];
+                    echo "<h2>Bonjour, $userDisplayName.</h2>";
+                }
+                ?>
+
+            </main>
 <?php
     require_once(DOCUMENT_ROOT . 'footer.php');

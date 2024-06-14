@@ -2,17 +2,17 @@
                 <div class="footerContainer">
                     <img src="/assets/img/logo_seed.webp" alt="Seed Logo" class="footer-logo" />
                     <div class="socialIcons">
-                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a title ="Site d'Agence" href="https://mmi23b04.sae202.ovh/agence/" target="_blank"><i class="fa fa-laptop"></i></a>
+                        <a title="Facebook" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a title="Instagram" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                     <div class="footerNav">
                         <ul>
-                            <li><a href="index.html">À Propos</a></li>
-                            <li><a href="about.html">Mentions Légales</a></li>
-                            <li><a href="services.html">Conditions Générales</a></li>
+                            <li><a title="À Propos" href="index.html">À Propos</a></li>
+                            <li><a title ="Mentions Légales" href="about.html">Mentions Légales</a></li>
+                            <li><a title="Conditions Générales" href="services.html">Conditions Générales</a></li>
                         </ul>
-                        <a href="contact.html" class="contact-button">Contact</a>
+                        <a title="Contact" href="contact.html" class="contact-button">Contact</a>
                     </div>
                     <div class="footerBottom">
                         <p>&copy; 2024 Seed. Tous droits réservés.</p>
