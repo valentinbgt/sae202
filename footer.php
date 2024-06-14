@@ -10,7 +10,7 @@
                         <ul>
                             <li><a title="À Propos" href="/footer/about.php">À Propos</a></li>
                             <li><a title ="Mentions Légales" href="/footer/mention.php">Mentions Légales</a></li>
-                            <li><a title="Conditions Générales" href="/footer/politique.php">Conditions Générales</a></li>
+                            <li><a title="Conditions Générales" href="/footer/politique.php">Politique de Confidentialité</a></li>
                         </ul>
                         <a title="Contact" href="/contact" class="contact-button">Contact</a>
                     </div>
