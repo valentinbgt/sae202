@@ -16,7 +16,7 @@ function addressCheck(text) {
         return;
     }
 
-    // fetch(`https://api.geoapify.com/v1/geocode/autocomplete?text=${text}&type=amenity&format=json&apiKey=2400638efdf346ff80e7e73a9c362be2&filter=countrycode:fr&bias=proximity:4.08333,48.299999`)
+    //request = `https://api.geoapify.com/v1/geocode/autocomplete?text=${text}&type=amenity&format=json&apiKey=2400638efdf346ff80e7e73a9c362be2&filter=countrycode:fr&bias=proximity:4.08333,48.299999`;
     request = `https://api.geoapify.com/v1/geocode/autocomplete?text=${text}&type=amenity&format=json&apiKey=b8568cb9afc64fad861a69edbddb2658&filter=countrycode:fr&bias=proximity:4.08333,48.299999`;
 
     resetTimer();
