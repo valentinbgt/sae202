@@ -12,7 +12,7 @@
                             <li><a title ="Mentions Légales" href="about.html">Mentions Légales</a></li>
                             <li><a title="Conditions Générales" href="services.html">Conditions Générales</a></li>
                         </ul>
-                        <a title="Contact" href="contact.html" class="contact-button">Contact</a>
+                        <a title="Contact" href="/contact" class="contact-button">Contact</a>
                     </div>
                     <div class="footerBottom">
                         <p>&copy; 2024 Seed. Tous droits réservés.</p>
