@@ -31,7 +31,6 @@
                         <input type="password" name="userPassword" id="userPassword" placeholder="************">
                     </div>
                 </div>
-
                 <div class="formDouble">
                     <div class="formBox">
                         <input type="submit" value="Se connecter">
@@ -40,6 +39,10 @@
 
                 <div class="signup-link">
                     <p>Vous n'avez pas de compte ? <a href="/profil/signup.php?from=<?= $from; ?>">S'inscrire</a></p>
+                </div>
+
+                <div class="signup-link">
+                    <p><a href="/gestion/prof?from=<?= $from; ?>">Connexion prof</a></p>
                 </div>
             </form>
     </div>        
