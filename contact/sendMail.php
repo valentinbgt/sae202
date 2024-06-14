@@ -1,13 +1,38 @@
 <?php
-ini_set( 'display_errors', 1 );
-error_reporting( E_ALL );
+    session_start();
+    ini_set( 'display_errors', 1 );
+    error_reporting( E_ALL );
 
-$from = "EXPEDITEUR";
-$to = "DESTINATAIRE";
-$subject = "VPSMAIL-02";
-$message = "Envoi du Message via PHP";
-$headers = "From:" . $from;
+    function errorMsg($msg){
+        $_SESSION["errorMsg"] = $msg;
+        header("location: ./");
+        die();
+    };
 
-//mail($to,$subject,$message, $headers);
+    extract($_POST);
 
-echo "L'email a été envoyé.";
+    if(empty($contactName)) errorMsg("Entrez un nom.");
+    if(empty($contactEmail)) errorMsg("Entrez une adresse email.");
+    if(empty($contactObject)) errorMsg("Entrez un object.");
+    if(empty($contactMessage)) errorMsg("Entrez un message.");
+
+    $contactName = preg_replace("~(?:[\p{M}]{1})([\p{M}])+?~uis", "", $contactName);
+    $contactObject = preg_replace("~(?:[\p{M}]{1})([\p{M}])+?~uis", "", $contactObject);
+    $contactMessage = preg_replace("~(?:[\p{M}]{1})([\p{M}])+?~uis", "", $contactMessage);
+
+    if(!filter_var($contactEmail, FILTER_VALIDATE_EMAIL)) errorMsg("L'adresse email renseignée n'est pas valide.");
+
+    $agentEmail = "mmi23a02@mmi-troyes.fr";
+
+    //FIRST MAIL
+    $from = $contactEmail;
+    $to = $agentEmail;
+    $subject = $contactObject;
+    $message = $contactMessage;
+    $headers = "From:" . $from;
+
+    $mail_status = mail($to,$subject,$message, $headers);
+
+    var_dump($mail_status);
+
+    echo "L'email a été envoyé.";
