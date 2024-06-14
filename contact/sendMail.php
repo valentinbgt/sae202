@@ -25,11 +25,11 @@
     $agentEmail = "valentin.beauget@etudiant.univ-reims.fr";
 
     //FIRST MAIL
-    $from = $contactEmail;
+    $from = $agentEmail;
     $to = $agentEmail;
     $subject = $contactObject;
     $message = $contactMessage;
-    $headers = "From:" . $from;
+    $headers = "From: " . $agentEmail . "\r\n" . "Reply-To: " . $contactEmail . "\r\n";
 
     $mail_status = mail($to,$subject,$message, $headers);
 
