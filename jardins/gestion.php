@@ -42,7 +42,7 @@
                         <?php
                             if(empty($jardin_gps)) $jardin_gps = "/";
                         ?>
-                        <p class="jardinGPS">GPS : <?= $jardin_gps ?></p>
+                        <p class="jardinGPS" title="<?= $jardin_gps ?>">GPS : <?= $jardin_gps ?></p>
 
                         <div class="separator"></div>
 
