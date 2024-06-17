@@ -4,7 +4,7 @@ define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/');
 require_once(DOCUMENT_ROOT . 'header.php');
 ?>
 <main>
-    <div class="topHeroImage2">
+    <div class="topHeroImage">
         <h1>Politique de Confidentialité</h1>
     </div>
     <section class="legal-section">

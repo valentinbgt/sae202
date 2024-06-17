@@ -653,6 +653,13 @@ form textarea:focus {
     position: relative;
 }
 
+#third-section {
+    background-color: #cdead9; 
+}
+
+#about2 {
+    background-color: #cdead9; 
+}
 
 .about-index {
     display: inline-block;
@@ -1110,6 +1117,4 @@ form textarea:focus {
         margin-bottom: 50px; /* Ajustement de la marge pour petits écrans */
         text-align: center;
     }
-
-    
 }
