@@ -76,7 +76,7 @@ nav {
     background-position: center;
     background-size: cover;
     display: block;
-    border: solid 2px black;
+    border: solid 2px #7FB096;
 }
 
 .navLink a {
@@ -101,10 +101,9 @@ nav {
     flex: 1;
     padding-top: calc(80px + 6px);
     /* Add nav height + border */
-    padding-bottom: calc(300px + 40px + 30px);
+    padding-bottom: calc(300px + 40px);
     /* Space for the footer + padding + marge */
     box-sizing: border-box;
-    margin-bottom: 40px; /* Ajustez la valeur selon l'espace souhaité */
 }
 
 .topHeroImage {
@@ -521,6 +520,136 @@ form textarea:focus {
     text-decoration: none;
 }
 
+/* CSS pour les sections */
+
+.section {
+    height: 100vh; /* Chaque section prend 100% de la hauteur de la page */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    border-bottom: 2px solid #7FB096; /* Ajoute une bordure en bas de chaque section */
+    border-left: 10px solid #7FB096; /* Ajoute une bordure à gauche de chaque section */
+    border-right: 10px solid #7FB096; /* Ajoute une bordure à droite de chaque section */
+}
+
+.section .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; /* Chaque section prend 80% de la largeur de la page */
+    margin: 0 auto; /* Centrer la section horizontalement */
+}
+
+.section .text {
+    flex: 1;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.section .text h1 {
+    font-size: 40px;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.section .text p {
+    font-size: 20px;
+    color: black;
+    text-align: justify;
+}
+
+.section .image, .section .image2 {
+    flex: 1;
+    text-align: right;
+}
+
+.section .image img {
+    max-width: 100%; /* S'assurer que l'image ne dépasse pas sa taille originale */
+    height: auto;
+}
+
+.section .image2 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Bord arrondi */
+    border: 2px solid #7FB096; /* Bordure de 2px avec couleur aqua */
+}
+
+.about-index {
+    display: inline-block;
+    background-color: white;
+    color: #7FB096;
+    padding: 10px 20px;
+    border-radius: 20px; 
+    border: 2px solid #7FB096;
+    font-weight: 700;
+    transition: background-color 0.6s, color 0.6s; 
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.about-index:hover {
+    background-color: #7aba78; 
+    color: white;
+    transition: 0.6s;
+}
+
+#services {
+    height: 100vh; /* Chaque section prend 100% de la hauteur de la page */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    border-bottom: 2px solid #7FB096; /* Ajoute une bordure en bas de chaque section */
+    border-left: 10px solid #7FB096; /* Ajoute une bordure à gauche de chaque section */
+    border-right: 10px solid #7FB096; /* Ajoute une bordure à droite de chaque section */
+}
+
+#services .content {
+    display: flex;
+    flex-direction: row-reverse; /* Inverse la direction (image à gauche, texte à droite) */
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; /* Chaque section prend 80% de la largeur de la page */
+    margin: 0 auto; /* Centre la section horizontalement */
+}
+
+#services .text {
+    flex: 1;
+    padding-left: 20px; /* Marge à gauche pour séparer le texte de l'image */
+    text-align: center;
+}
+
+#services .text h1 {
+    font-size: 40px;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#services .text p {
+    font-size: 20px;
+    color: black;
+    text-align: justify;
+}
+
+#services .image {
+    flex: 1;
+    text-align: left; /* Aligne l'image à gauche */
+}
+
+#services .image img {
+    max-width: 100%; /* S'assure que l'image ne dépasse pas sa taille originale */
+    height: auto;
+    border-radius: 10px; /* Bords arrondis */
+    border: 2px solid #7FB096; /* Bordure de 2px avec couleur */
+}   
+
+
+
 @media screen and (max-width: 1350px) {
     #signForm .formBox,
     #addGardenForm .formBox {
@@ -901,4 +1030,6 @@ form textarea:focus {
         margin-bottom: 50px; /* Ajustement de la marge pour petits écrans */
         text-align: center;
     }
+
+    
 }
