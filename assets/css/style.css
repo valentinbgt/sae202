@@ -327,7 +327,8 @@ footer {
 
 #signForm p.addPicture,
 #addGardenForm p.addPicture,
-#addGardenForm a#addPlotButton {
+#addGardenForm a#addPlotButton,
+.button.little {
     text-wrap: nowrap;
     padding: 12px;
     font-size: 18px;
@@ -872,6 +873,40 @@ form textarea:focus {
     transition: 0.2s all ease-out;
     font-weight: 500;
 }
+
+
+.profil{
+    display: flex;
+    flex-direction: column;
+    width: fit-content; /* DEV */
+    margin: 0 auto;
+    align-items: flex-start;
+
+}
+
+.profil input[type=text]{
+    border: none;
+    font-size: 18px;
+    background: transparent;
+    padding: 6px 10px;
+}
+.profil input[type=text]#profilName{
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.profil input[type=text]:focus{
+
+}
+
+.profil #profilImage{
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 
 
 .footerNav a {
