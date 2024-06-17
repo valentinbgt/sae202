@@ -648,7 +648,7 @@ form textarea:focus {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 86px); /* Ajustez la hauteur selon votre besoin */
+    height: calc(100vh - 80px); /* Ajustez la hauteur selon votre besoin */
     text-align: center;
     background-image: url('/assets/img/Back.webp'); /* Votre image de fond */
     background-size: cover;
@@ -1114,7 +1114,7 @@ form textarea:focus {
     }
 
     .navLink.active a {
-        border-bottom: 5px dashed #0E235A;
+        border-bottom: 3px solid #7FB096;
         padding-bottom: 5px; /* Optionnel : pour ajuster l'espacement entre le texte et le trait */
     }
     
@@ -1134,7 +1134,7 @@ form textarea:focus {
     }
 
     h2.pageSeconTitle {
-        font-size: 12vw;
+        font-size: 9vw;
     }
 
     footer {
