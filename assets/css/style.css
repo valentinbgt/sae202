@@ -295,6 +295,10 @@ footer {
     caret-color: #7FB096;
 }
 
+#signForm input#contactObject {
+    width: 180%;
+}
+
 #signForm textarea{
     width: 90%;
 }
@@ -744,6 +748,10 @@ form textarea:focus {
         width: 90%;
     }
 
+    #signForm input#contactObject {
+        width: 90%;
+    }
+
     .jardinsContainer {
         grid-template-columns: 1fr 1fr;
         width: 95%;
@@ -1117,6 +1125,10 @@ form textarea:focus {
     #signForm input[type=email],
     #signForm input[type=password],
     #addGardenForm input[type=text] {
+        width: 95%;
+    }
+
+    #signForm input#contactObject {
         width: 95%;
     }
 

@@ -22,7 +22,7 @@
                 
                 <div class="formBox">
                     <label for="contactObject">Object de la demande</label>
-                    <input required type="email" name="contactObject" id="contactObject" placeholder="Demande de partenariat">
+                    <input required type="text" name="contactObject" id="contactObject" placeholder="Demande de partenariat">
                 </div>
                 
                 <div class="formBox textarea">
