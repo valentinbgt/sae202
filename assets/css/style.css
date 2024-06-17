@@ -417,6 +417,10 @@ form textarea:focus {
     margin: 0 auto;
     margin-bottom: 60px;
 }
+.jardinsContainer.parcelles{
+    grid-auto-rows: 280px;
+}
+
 .about-section {
     padding: 20px;
     max-width: 800px;
@@ -554,6 +558,9 @@ form textarea:focus {
     overflow: hidden;
     background-color: #f0f0ee;
 }
+.carteJardin *{
+    text-wrap: nowrap;
+}
 
 .carteJardin img.photoJardin {
     position: absolute;
@@ -580,12 +587,18 @@ form textarea:focus {
     color: rgb(155, 155, 155);
     width: fit-content;
     margin: 0 auto;
+    width: 100%;
+    text-wrap: nowrap;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .carteJardin .jardinDetails {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    align-items: center;
     font-weight: 500;
 }
 
@@ -611,12 +624,19 @@ form textarea:focus {
     color: rgb(134, 28, 28);
 }
 
+.carteJardin .jardinDetails .owner,
+.carteJardin .jardinDetails .surface{
+    text-align: center;
+}
+
 .carteJardin .jardinActions {
     margin: 0 auto;
     margin-top: 6px;
     width: fit-content;
     display: flex;
     align-items: center;
+    width: 90%;
+    justify-content: center;
 }
 
 .carteJardin .jardinActions a {
