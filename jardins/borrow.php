@@ -1,5 +1,9 @@
 <?php
-    if(empty($_GET["id"])) { header("location: ./"); die(); };
+    $title = "Emprunter un jardin - Seed";
+    define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/');
+    require_once(DOCUMENT_ROOT . 'header.php');
+
+    if(empty($_GET["id"])) { header("location: ./"); die("1"); };
     $id = "";
     try {
         $id = base64_decode($_GET["id"]);
@@ -7,9 +11,32 @@
     } catch (\Throwable $th) {
         header("location: ./");
     }
-    if(!is_int($id)) { header("location: ./"); die(); };
+    if(!is_int($id)) { header("location: ./"); die("2"); };
 
-    if(empty($_GET["s"])) { header("location: ./"); die(); };
+    require('proc/db.inc.php');
+    $db = dbConn();
+
+    if(isset($_GET['giveBack'])){
+        if(empty($_SESSION["user_id"])){
+            header("location: /profil/signin.php?from=" . $from);
+            die;
+        }
+        $userId = $_SESSION["user_id"];
+
+        $sql = "UPDATE `parcelles` SET `parcelle_available`=1, `parcelle_validation`=0, `parcelle_user_id` = NULL WHERE `parcelle_id`=:parcelleId AND `parcelle_user_id`=:userId";
+
+        $query = $db->prepare($sql);
+        $query->bindParam(':userId', $userId);
+        $query->bindParam(':parcelleId', $id);
+
+        $query->execute();
+
+        header("location: ./parcelles.php");
+
+        die("3");
+    }
+
+    if(empty($_GET["s"])) { header("location: ./"); die("4"); };
     $surface = "";
     try {
         $surface = base64_decode($_GET["s"]);
@@ -17,14 +44,7 @@
     } catch (\Throwable $th) {
         header("location: ./");
     }
-    if(!is_int($surface)) { header("location: ./"); die(); };
-
-    $title = "Emprunter un jardin - Seed";
-    define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/');
-    require_once(DOCUMENT_ROOT . 'header.php');
-
-    require('proc/db.inc.php');
-    $db = dbConn();
+    if(!is_int($surface)) { header("location: ./"); die("5"); };
 
     $sql = "SELECT * FROM `parcelles` WHERE `parcelle_taille`=:surface AND `jardin_id`=:id AND `parcelle_available`=1 AND `parcelle_user_id` IS NULL";
 
@@ -39,7 +59,7 @@
 
     if(!$parcelle){
         header("location: ./");
-        die();
+        die("6");
     }
 
     if(isset($_GET["go"])){//script d'ajout du jardin + redirection vers parcelles
@@ -58,16 +78,14 @@
             $query->bindParam(':userId', $userId);
             $query->bindParam(':parcelleId', $parcelle_id);
 
-            var_dump($query);
-
             $query->execute();
         }else{
             header('location: ./');
-            die();
+            die("7");
         }
         
-        header('loaction: parcelles.php');
-        die();
+        header('location: parcelles.php');
+        die("8");
     }
 ?>
      <main>

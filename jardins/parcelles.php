@@ -42,6 +42,7 @@
                             extract($jardin);
 
                             $jardin_enc_id = urlencode(base64_encode($jardin_id));
+                            $parcelle_enc_id = urlencode(base64_encode($parcelle_id));
 
                             $owner = getUserName($jardin_user_id);
                 ?>
@@ -65,9 +66,9 @@
                         </div>
                         
                         <div class="jardinActions">
-                            <a href="#">Modifier</a>
+                            <!--<a href="#">Modifier</a>-->
                             
-                            <a href="#">Rendre</a>
+                            <a href="borrow.php?id=<?= $parcelle_enc_id ?>&giveBack">Rendre</a>
                         </div>
                         
                         <!--<p> parcelles :</p>
