@@ -98,7 +98,7 @@
                                 <p class="owner">propriétaire : <br><span class="actif"><?= $userName ?></span></p>
                             </div>
                             <div class="jardinActions">
-                                <a href="#">Emprunter</a>
+                                <a href="borrow.php?id=<?= $jardin_enc_id ?>">Emprunter</a>
                             </div>
                         </div>
                     <?php
