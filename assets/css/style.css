@@ -658,6 +658,7 @@ form textarea:focus {
 
 #third-section {
     background-color: #cdead9; 
+    margin-bottom: -30px;
 }
 
 #about2 {
@@ -1095,10 +1096,6 @@ form textarea:focus {
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
 
-    .navLink a:active {
-        color: #A7E6FF;
-    }
-
     .navLink {
         position: relative;
     }
@@ -1116,6 +1113,11 @@ form textarea:focus {
         display: none;
     }
 
+    .navLink.active a {
+        border-bottom: 5px dashed #0E235A;
+        padding-bottom: 5px; /* Optionnel : pour ajuster l'espacement entre le texte et le trait */
+    }
+    
     #content {
         padding-top: 0;
         padding-bottom: 0;
@@ -1148,6 +1150,7 @@ form textarea:focus {
     #addGardenForm {
         width: 80%;
         margin: 30px auto;
+        margin-bottom: 110px;
     }
 
     #signForm .formBox,
@@ -1344,5 +1347,11 @@ form textarea:focus {
         margin: 0 auto; /* Centre le paragraphe horizontalement */
 
     }
-    
+ 
+
+    .buttonContainer{
+        width: fit-content;
+        margin: 0 auto;
+        margin-bottom: 110px;
+    }
 }

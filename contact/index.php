@@ -26,7 +26,7 @@
                 </div>
                 
                 <div class="formBox textarea">
-                    <label for="contactEmail">Adresse Email</label>
+                    <label for="contactEmail">Votre Message</label>
                     <textarea required name="contactMessage" id="contactMessage" placeholder="Bonjour,..."></textarea>
                 </div>
 

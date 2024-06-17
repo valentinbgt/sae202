@@ -32,16 +32,16 @@
     </head>
     <body>
         <header>
-            <nav>
-                <div class="navLink"><object title="Accueil" data="/assets/img/svg/home.svg" type="image/svg+xml" class="navIcon" aria-label="Accueil"></object><a href="/"><span class="navLinkText"><img class="home-logo" src="/assets/img/svg/logo.svg" alt="Seed Logo" title="Seed - Écojardinage urbain"></img></span></a></div>
-                <div class="navLink"><object title="Jardin" data="/assets/img/svg/fleur.svg" type="image/svg+xml" class="navIcon" aria-label="Jardin"></object><a href="/jardins"><span class="navLinkText">Jardins</span></a></div>
-                <div class="navLink"><object title="Gestion" data="/assets/img/svg/bulles.svg" type="image/svg+xml" class="navIcon" aria-label="Gestion"></object><a href="/jardins/gestion.php"><span class="navLinkText">Gestion</span></a></div>
+        <nav>
+                <div class="navLink <?= ($page == 'index.php' || $page == '') ? 'active' : '' ?>"><object title="Accueil" data="/assets/img/svg/home.svg" type="image/svg+xml" class="navIcon" aria-label="Accueil"></object><a href="/"><span class="navLinkText"><img class="home-logo" src="/assets/img/svg/logo.svg" alt="Seed Logo" title="Seed - Écojardinage urbain"></span></a></div>
+                <div class="navLink <?= ($page == 'jardins') ? 'active' : '' ?>"><object title="Jardin" data="/assets/img/svg/fleur.svg" type="image/svg+xml" class="navIcon" aria-label="Jardin"></object><a href="/jardins"><span class="navLinkText">Jardins</span></a></div>
+                <div class="navLink <?= ($page == 'gestion.php') ? 'active' : '' ?>"><object title="Gestion" data="/assets/img/svg/bulles.svg" type="image/svg+xml" class="navIcon" aria-label="Gestion"></object><a href="/jardins/gestion.php"><span class="navLinkText">Gestion</span></a></div>
                 
                 <?php
                     if(empty($_SESSION["user_id"])){
                 ?>
-                    <div <?php if($page == "signin.php") echo "hidden"; ?> class="navLink"><object data="/assets/img/svg/user.svg" type="image/svg+xml" class="navIcon"></object><a href="/profil/signin.php?from=<?= $from; ?>"><span class="navLinkText">Connexion</span></a></div>
-                    <div <?php if($page != "signin.php") echo "hidden"; ?> class="navLink"><object data="/assets/img/svg/user.svg" type="image/svg+xml" class="navIcon"></object><a href="/profil/signup.php?from=<?= $from; ?>"><span class="navLinkText">Inscription</span></a></div>
+                    <div <?= ($page == 'signin.php') ? 'class="navLink active"' : 'class="navLink"' ?>><object data="/assets/img/svg/user.svg" type="image/svg+xml" class="navIcon"></object><a href="/profil/signin.php?from=<?= $from; ?>"><span class="navLinkText">Connexion</span></a></div>
+                    <div <?= ($page == 'signup.php') ? 'class="navLink active"' : 'class="navLink"' ?>><object data="/assets/img/svg/user.svg" type="image/svg+xml" class="navIcon"></object><a href="/profil/signup.php?from=<?= $from; ?>"><span class="navLinkText">Inscription</span></a></div>
                 <?php
                     }else{
                 ?>
