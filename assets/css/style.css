@@ -1484,4 +1484,8 @@ form textarea:focus {
     .jardinEmprunt {
         margin-bottom: 40px;
     }
+
+    .section {
+        border-top: 10px solid #7FB096;
+    }
 }
