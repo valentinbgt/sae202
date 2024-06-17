@@ -730,6 +730,49 @@ form textarea:focus {
     border: 2px solid #7FB096; /* Bordure de 2px avec couleur */
 }   
 
+/* Jardin Emprunt */
+.jardinEmprunt {
+    background-color: #f4f4f4; /* Couleur de fond gris */
+    border-radius: 8px; /* Même border-radius que les autres sections */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center; /* Center-align text */
+    max-width: 600px; /* Largeur maximale de la boîte */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jardinEmprunt img {
+    width: 100%; /* Image prend 100% de la largeur de son conteneur */
+    height: auto;
+    border-top-left-radius: 8px; /* Border-radius du coin supérieur gauche */
+    border-top-right-radius: 8px; /* Border-radius du coin supérieur droit */
+}
+
+.jardinEmprunt .infos {
+    padding: 15px 0;
+}
+
+.jardinEmprunt .infos p {
+    margin: 8px 0;
+}
+
+.jardinEmprunt .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #28a745; /* Couleur de fond du bouton */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px; /* Même border-radius que les autres boutons */
+    transition: background-color 0.3s;
+}
+
+.jardinEmprunt .button:hover {
+    background-color: #218838; /* Couleur de fond du bouton au survol */
+}
 
 
 @media screen and (max-width: 1350px) {
