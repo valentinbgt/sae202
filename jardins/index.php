@@ -21,7 +21,7 @@
 
                 $db = dbConn();
 
-                $req = "SELECT `jardin_id`, `jardin_gps`, `jardin_location`, `jardin_available` FROM `jardins` WHERE `jardin_available`=1 AND `jardin_location` LIKE :search";
+                $req = "SELECT `jardin_id`, `jardin_gps`, `jardin_location`, `jardin_available`, `jardin_user_id` FROM `jardins` WHERE `jardin_available`=1 AND `jardin_location` LIKE :search";
                 $query = $db->prepare($req);
                 $query->bindParam(':search', $search);
                 $query->execute();
@@ -41,6 +41,29 @@
                 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 
                 $parcelles_available = $res;
+
+                $parcelles_available_sort = [];
+
+                foreach ($parcelles_available as $parcelle_available_key => $parcelle_available) {
+                    $parcelleSorted = false;
+                    foreach ($parcelles_available_sort as $parcelle_available_sort_key => $parcelle_available_sort) {
+                        if(@$parcelle_available_sort["parcelle_taille"] == $parcelle_available["parcelle_taille"] && @$parcelle_available_sort["jardin_id"] == $parcelle_available["jardin_id"]){
+                            $parcelleSorted = true;
+                            $parcelles_available_sort[$parcelle_available_sort_key]["nbParcelles"]++;
+                        };
+                    }
+
+                    if(@!$parcelleSorted){
+                        $parcelle_available["nbParcelles"] = 1;
+                        $parcelles_available_sort[$parcelle_available_key] = $parcelle_available;
+                    }else{
+                        
+                    }
+                }
+
+                $parcelles_available = $parcelles_available_sort;
+
+
                 shuffle($parcelles_available);
 
                 ?>
@@ -59,6 +82,9 @@
                     $jardin_location = htmlentities($jardin_location);
                     $jardin_gps = htmlentities($jardin_gps);
 
+                    $userName = getUserName($jardin_user_id);
+
+                    $nbParcelles = $parcelle["nbParcelles"];
 
                     ?>
                         <div class="carteJardin">
@@ -67,9 +93,9 @@
                             <p class="jardinGPS" title="<?= $jardin_gps ?>">GPS : <?= $jardin_gps ?></p>
                             <div class="separator"></div>
                             <div class="jardinDetails">
-                                <p class="surface"><?= $parcelle_taille ?> m²<br>1 restante</p>
+                                <p class="surface"><?= $parcelle_taille ?> m²<br><?= $nbParcelles ?> restante<?php if($nbParcelles > 1) echo "s";?></p>
                                 <div class="separator"></div>
-                                <p class="owner">propriétaire : <br><span class="actif">Inconnu (inconnu)</span></p>
+                                <p class="owner">propriétaire : <br><span class="actif"><?= $userName ?></span></p>
                             </div>
                             <div class="jardinActions">
                                 <a href="#">Emprunter</a>
@@ -77,10 +103,9 @@
                         </div>
                     <?php
                 }
-            ?>
+                ?>
             </div>
-            <p>Aucune parcelle de jardin n'est disponible à l'emprunt actuellement.</p>
-            <p><a href="gestion.php">Ajoutez votre jardin</a></p>
+            <p class="buttonContainer"><a class="button" href="gestion.php">Ajoutez votre jardin</a></p>
         </main>
 <?php
     require_once(DOCUMENT_ROOT . 'footer.php');
