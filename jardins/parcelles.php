@@ -37,13 +37,13 @@
                         foreach($parcelles as $parcelle){
                             extract($parcelle);
 
-                            die();//HERE
+                            $jardin = findOne('jardins', 'jardin_id', $jardin_id);
+
+                            extract($jardin);
+
                             $jardin_enc_id = urlencode(base64_encode($jardin_id));
-                                $sql = "SELECT COUNT(parcelle_id) AS nb_parcelles FROM parcelles WHERE jardin_id = '$jardin_id'";
-                                $query = $db->prepare($sql);
-                                $query->execute();
-                                $res = $query->fetch();
-                                $nbParcelles = $res["nb_parcelles"];
+
+                            $owner = getUserName($jardin_user_id);
                 ?>
                     <div class="carteJardin">
                         <img class="photoJardin" src="/jardins/picture.php?id=<?= $jardin_enc_id ?>" alt="Photo du jardin <?= $jardin_location; ?>" height="50px">
@@ -57,27 +57,17 @@
                         <div class="separator"></div>
 
                         <div class="jardinDetails">
-                            <p><?= $nbParcelles ?> parcelle<?php if(@intval($nbParcelles) > 1) echo "s" ?></p>
+                            <p>Taille <?= $parcelle_taille ?>m²</p>
 
                             <div class="separator"></div>
 
-                            <?php
-                                if($jardin_available) $jardin_status = "actif";
-                                else $jardin_status = "inactif";
-                            ?>
-                            <p class="<?= $jardin_status ?>"><?= $jardin_status ?></p>
+                            <p><?= $owner ?></p>
                         </div>
                         
                         <div class="jardinActions">
-                            <a href="update.php?id=<?= $jardin_enc_id; ?>">Modifier</a>
-
-                            <?php
-                                if(!$nbParcelles){
-                                    ?>
-                                    <a href="proc/delete.php?id=<?= $jardin_enc_id; ?>">Supprimer</a>
-                                    <?php
-                                }
-                            ?>
+                            <a href="#">Modifier</a>
+                            
+                            <a href="#">Rendre</a>
                         </div>
                         
                         <!--<p> parcelles :</p>
