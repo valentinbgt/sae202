@@ -78,6 +78,7 @@
                     extract($jardins[$jardin_id]);
 
                     $jardin_enc_id = urlencode(base64_encode($jardin_id));
+                    $parcelle_enc_taille = urlencode(base64_encode($parcelle_taille));
 
                     $jardin_location = htmlentities($jardin_location);
                     $jardin_gps = htmlentities($jardin_gps);
@@ -98,7 +99,7 @@
                                 <p class="owner">propriétaire : <br><span class="actif"><?= $userName ?></span></p>
                             </div>
                             <div class="jardinActions">
-                                <a href="borrow.php?id=<?= $jardin_enc_id ?>">Emprunter</a>
+                                <a href="borrow.php?id=<?= $jardin_enc_id ?>&s=<?= $parcelle_enc_taille ?>">Emprunter</a>
                             </div>
                         </div>
                     <?php

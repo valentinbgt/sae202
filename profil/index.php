@@ -21,7 +21,7 @@
             <img src="/profil/picture.php?user=<?= $user_name; ?>" alt="Photo de profil de <?= $user_displayName ?>" width="300">
             <p><?= $user_email ?></p>
             <p><a href="/jardins/gestion.php">Gérer mes jardins</a></p>
-            <p><a href="/jardins/gestion.php?emprunt">Gérer les parcelles empruntés</a></p>
+            <p><a href="/jardins/parcelles.php">Gérer les parcelles empruntés</a></p>
             <!-- <p><a href="">Gérer les articles disponibles</a></p> -->
             <p><a href="/profil/inc/logout.proc.php">Déconnexion</a></p>
         </main>
