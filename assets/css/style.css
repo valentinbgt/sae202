@@ -867,6 +867,12 @@ form textarea:focus {
     justify-content: center;
 }
 
+.jardinEmprunt .message {
+    text-align: justify;
+}
+
+
+
 .jardinEmprunt .empruntEnvoi a {
     text-decoration: none;
     background-color: #7FB096;
@@ -883,6 +889,16 @@ form textarea:focus {
     color: black;
     transition: 0.2s all ease-out;
     font-weight: 500;
+}
+
+.jardinEmprunt .parcelles{
+    width: fit-content;
+    margin: 0  auto;
+    margin-top: 10px;
+}
+
+.jardinEmprunt .parcelle{
+    width: fit-content;
 }
 
 .carteJardin {
@@ -993,6 +1009,21 @@ form textarea:focus {
     font-weight: 500;
 }
 
+.carteJardin .waitForValid{
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    color: white;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 500;
+    backdrop-filter: contrast(0.5) blur(4px);
+}
 
 .profil{
     display: flex;

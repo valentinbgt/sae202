@@ -35,6 +35,80 @@
                 $res = findOne("jardins", "jardin_id", $id);
 
                 if(!is_array($res)){
+                    header("location: ./.php");
+                    die();
+                }
+
+                extract($res);
+
+                $jardin_enc_id = urlencode(base64_encode($jardin_id));
+
+                $jardin_location = htmlentities($jardin_location);
+                $jardin_gps = htmlentities($jardin_gps);
+
+                $owner = getUserName($jardin_user_id);
+            ?>
+            
+            <script defer src="/assets/js/customCheckboxes.js"></script>
+            <form class="jardinEmprunt">
+                <img src="picture.php?id=<?= $jardin_enc_id ?>" alt="Image du jardin <?= $jardin_location ?>">
+                <p class="location"><?= $jardin_location ?></p>
+                <p class="gps">GPS : <?= $jardin_gps ?></p>
+                <div class="separator"></div>
+                <div class="jardinEmpruntD">
+                    <p class="surface">20 parcelles</p>
+                    <div class="separator"></div>
+                    <p class="owner"></p>
+                </div>
+                <div class="parcelles">
+                <?php
+                    $sql = "SELECT * FROM `parcelles` WHERE `jardin_id`=:jardinId";
+
+                    $query = $db->prepare($sql);
+
+                    $query->bindParam(':jardinId', $jardin_id);
+
+                    $query->execute();
+
+                    $res = $query->fetchAll(PDO::FETCH_ASSOC);
+
+                    $parcelles = $res;
+
+                    foreach ($parcelles as $key => $parcelle) {
+                        extract($parcelle);
+
+                        $parcelle_enc_id = urlencode(base64_encode($parcelle_id));
+
+                        $state = "Libre";
+                        if($parcelle_user_id != null && $parcelle_validation == 0) $state = "Demandé par";
+                        if($parcelle_user_id != null && $parcelle_validation == 1) $state = "Pris par";
+
+                        $user = " ";
+                        if($parcelle_user_id != null) $user .= getUserName($parcelle_user_id);
+
+                        if($parcelle_user_id == null) $action = "Supprimer";
+                        if($parcelle_user_id != null && $parcelle_validation == 0) $action = "Accepter";
+                        if($parcelle_user_id != null && $parcelle_validation == 1) $action = "Éjecter";
+                ?>
+                    <p>
+                        <?= $parcelle_taille ?>m² - 
+                        <?= $state . $user ?> - 
+                        <a href="?id=<?= $parcelle_enc_id ?>&<?= $action ?>"><?= $action ?></a>
+                    </p>                    
+                    <?php
+                        }
+                    ?>
+                </div>
+                publier ?
+                <div class="empruntEnvoi">
+                    <a class="button">Enregistrer</a>
+                </div>
+            </form>
+
+            <?php
+                $res = findOne("jardins", "jardin_id", $id);
+
+                if(!is_array($res)){
                     header("location: gestion.php");
                     die();
                 }
