@@ -88,39 +88,45 @@
         die("8");
     }
 ?>
-        <main>
-            <div class="topHeroImage">
-                <h1>Emprunter</h1>
+     <main>
+        <div class="topHeroImage">
+            <h1>Emprunter</h1>
+        </div>
+        <br><br>
+
+        <?php
+            $res = findOne("jardins", "jardin_id", $id);
+
+            if(!is_array($res)){
+                header("location: ./.php");
+                die();
+            }
+
+            extract($res);
+
+            $jardin_enc_id = urlencode(base64_encode($jardin_id));
+
+            $jardin_location = htmlentities($jardin_location);
+            $jardin_gps = htmlentities($jardin_gps);
+
+            $owner = getUserName($jardin_user_id);
+        ?>
+        <div class="jardinEmprunt">
+            <img src="picture.php?id=<?= $jardin_enc_id ?>" alt="Image du jardin <?= $jardin_location ?>">
+            <p class="location"><?= $jardin_location ?></p>
+            <p class="gps">GPS : <?= $jardin_gps ?></p>
+            <div class="separator"></div>
+            <div class="jardinEmpruntD">
+            <p class="surface">Surface :<br><?= $parcelle['parcelle_taille'] ?>m²</p>
+            <div class="separator"></div>
+            <p class="owner">Propriétaire : <br><span class="actif"><?= $owner ?></span></p>
             </div>
-            <br><br>
-
-            <?php
-                $res = findOne("jardins", "jardin_id", $id);
-
-                if(!is_array($res)){
-                    header("location: ./.php");
-                    die("test");
-                }
-
-                extract($res);
-
-                $jardin_enc_id = urlencode(base64_encode($jardin_id));
-
-                $jardin_location = htmlentities($jardin_location);
-                $jardin_gps = htmlentities($jardin_gps);
-
-                $owner = getUserName($jardin_user_id);
-            ?>
-            <div class="jardinEmprunt">
-                <img src="picture.php?id=<?= $jardin_enc_id ?>" alt="Image du jardin <?= $jardin_location ?>">
-                <p class="location"><?= $jardin_location ?></p>
-                <p class="gps"><?= $jardin_gps ?></p>
-                <p class="surface">Surface : <?= $parcelle['parcelle_taille'] ?>m²</p>
-                <p class="owner">Propriétaire : <?= $owner ?></p>
-                <a class="button" href="?id=<?= urlencode($_GET["id"]) ?>&s=<?= urlencode($_GET["s"]) ?>&go">Emprunter</a>
-                <p>Le propriétaire, <?= $owner ?>, sera averti et devra valider votre demande manuellement.</p>
+            <div class="empruntEnvoi">
+            <a class="button" href="?id=<?= urlencode($_GET["id"]) ?>&s=<?= urlencode($_GET["s"]) ?>&go">Emprunter</a>
             </div>
-            
-        </main>
+            <p>Le propriétaire, <?= $owner ?>, sera averti et devra valider votre demande manuellement.</p>
+        </div>
+        
+    </main>
 <?php
     require_once(DOCUMENT_ROOT . 'footer.php');
