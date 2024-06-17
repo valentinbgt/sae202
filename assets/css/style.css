@@ -247,7 +247,8 @@ footer {
 #signForm p.addPicture,
 #addGardenForm input[type=submit],
 #addGardenForm p.addPicture,
-#addGardenForm a#addPlotButton {
+#addGardenForm a#addPlotButton,
+.button {
     margin: 6px auto;
     padding: 14px 20px;
     font-size: 20px;
@@ -257,6 +258,15 @@ footer {
     border-radius: 6px;
     font-weight: 500;
     transition: all 0.1s ease-out;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+}
+
+.buttonContainer{
+    width: fit-content;
+    margin: 0 auto;
 }
 
 #signForm p.addPicture,
@@ -267,12 +277,6 @@ footer {
     font-size: 18px;
     font-weight: 450;
     margin: 12px;
-    -webkit-user-select: none;
-    /* Safari */
-    -ms-user-select: none;
-    /* IE 10 and IE 11 */
-    user-select: none;
-    /* Standard syntax */
 }
 
 #addGardenForm a#addPlotButton{
@@ -283,7 +287,8 @@ footer {
 #signForm p.addPicture:hover,
 #addGardenForm input[type=submit]:hover,
 #addGardenForm p.addPicture:hover,
-#addGardenForm a#addPlotButton:hover {
+#addGardenForm a#addPlotButton:hover,
+.button:hover {
     transition: all 0.2s ease-out;
     cursor: pointer;
     background-color: transparent;
