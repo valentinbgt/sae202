@@ -43,7 +43,13 @@
         <p>
             Que vous soyez un jardinier débutant ou expérimenté, Seed est l'endroit idéal pour vous épanouir. Rejoignez notre communauté dès aujourd'hui et commencez à cultiver votre passion pour le jardinage !
         </p><br>
+        <?php
+            if(empty($_SESSION["user_id"])){
+        ?>
         <p><a href="/profil/signup.php">Créer un compte</a> | <a href="/profil/signin.php">Se connecter</a></p>
+        <?php
+            }
+        ?>
     </section>
 </main>
 
