@@ -735,7 +735,33 @@ form textarea:focus {
     border: 2px solid #7FB096; /* Bordure de 2px avec couleur */
 }   
 
-
+.searchForm {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 10px 15px; /* Increased padding for a cleaner look */
+    border-radius: 10px; /* Bords arrondis */
+    border: 2px solid #7FB096; /* Bordure de 2px avec couleur */
+  }
+  
+  .searchForm input[type="search"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    background-color: transparent; /* Transparent background for a lighter feel */
+  }
+  
+  .searchForm input[type="search"]::placeholder { /* Style the placeholder text */
+    color: #ccc; /* Light gray placeholder text */
+  }
+  
 @media screen and (max-width: 1350px) {
     #signForm .formBox,
     #addGardenForm .formBox {
@@ -1102,6 +1128,13 @@ form textarea:focus {
     color: white;
 }
 
+.searchForm {
+    max-width: 90%; /* Adjust max-width for smaller screens */
+  }
+  .searchForm input[type="search"] {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
 /* Téléphone */
 
 @media screen and (max-width: 576px) {
@@ -1385,4 +1418,16 @@ form textarea:focus {
         margin: 0 auto;
         margin-bottom: 110px;
     }
+
+    #third-section {
+        background-color: #cdead9; 
+        margin-bottom: 30px;
+    }
+
+    .searchForm {
+        padding: 5px 10px; /* Reduce padding for very small screens */
+      }
+      .searchForm button[type="submit"] {
+        font-size: 12px; /* Adjust button font size for mobile */
+      }
 }

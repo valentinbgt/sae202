@@ -10,7 +10,9 @@
                 <h1>Jardins</h1>
             </div>
             <h2 class="pageSeconTitle">Les parcelles <span style="text-wrap: nowrap;">à emprunter</spa></h2>
-
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" class="searchForm">
+                    <input type="search" name="search" id="searchInput" placeholder="Rechercher un jardin par localisation" value="<?php if(!empty($_GET['search'])) echo htmlentities($_GET['search']); ?>">
+                </form><br>
             <?php
                 if(!empty($_GET["search"])){
                     $search = $_GET["search"];
@@ -108,5 +110,35 @@
             </div>
             <p class="buttonContainer"><a class="button" href="gestion.php">Ajoutez votre jardin</a></p>
         </main>
+
+        <script>
+    function filterJardins() {
+        // Get the search term from the input field
+        var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+
+        // Get all the garden cards (assuming they have a class like "carteJardin")
+        var gardenCards = document.querySelectorAll(".carteJardin");
+
+        // Loop through each garden card
+        for (var i = 0; i < gardenCards.length; i++) {
+            var gardenCard = gardenCards[i];
+
+            // Get the garden location text (assuming it has a class like "jardinTitle")
+            var gardenLocation = gardenCard.querySelector(".jardinTitle").textContent.toLowerCase();
+
+            // Check if the garden location text includes the search term
+            if (gardenLocation.indexOf(searchTerm) !== -1) {
+                // If it includes the term, show the card
+                gardenCard.style.display = "block";
+            } else {
+                // If it doesn't include the term, hide the card
+                gardenCard.style.display = "none";
+            }
+        }
+    }
+
+    // Attach event listener to search input
+    document.getElementById("searchInput").addEventListener("keyup", filterJardins);
+</script>
 <?php
     require_once(DOCUMENT_ROOT . 'footer.php');
