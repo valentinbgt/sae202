@@ -124,7 +124,7 @@
             <div class="empruntEnvoi">
             <a class="button" href="?id=<?= urlencode($_GET["id"]) ?>&s=<?= urlencode($_GET["s"]) ?>&go">Emprunter</a>
             </div>
-            <p>Le propriétaire, <?= $owner ?>, sera averti et devra valider votre demande manuellement.</p>
+            <p class="message">Le propriétaire, <?= $owner ?>, sera averti et devra valider votre demande manuellement.</p>
         </div>
         
     </main>
