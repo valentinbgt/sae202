@@ -16,7 +16,8 @@
         <link rel="stylesheet" href="/assets/css/fonts/getAll.css">
 
         <script src="/assets/js/main.js"></script>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="/assets/js/animation.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
 
         <script>
@@ -32,7 +33,7 @@
     <body>
         <header>
             <nav>
-                <div class="navLink"><object title="Accueil" data="/assets/img/svg/home.svg" type="image/svg+xml" class="navIcon"></object><a href="/"><span class="navLinkText"><img class="home-logo" src="/assets/img/svg/logo.svg"></img></span></a></div>
+                <div class="navLink"><object title="Accueil" data="/assets/img/svg/home.svg" type="image/svg+xml" class="navIcon"></object><a href="/"><span class="navLinkText"><img class="home-logo" src="/assets/img/svg/logo.svg" alt="Seed Logo" title="Seed - Écojardinage urbain"></img></span></a></div>
                 <div class="navLink"><object title="Jardin" data="/assets/img/svg/fleur.svg" type="image/svg+xml" class="navIcon"></object><a href="/jardins"><span class="navLinkText">Jardins</span></a></div>
                 <div class="navLink"><object title="Gestion" data="/assets/img/svg/bulles.svg" type="image/svg+xml" class="navIcon"></object><a href="/jardins/gestion.php"><span class="navLinkText">Gestion</span></a></div>
                 

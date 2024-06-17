@@ -1,6 +1,6 @@
 <footer>
                 <div class="footerContainer">
-                    <img src="/assets/img/logo_seed.webp" alt="Seed Logo" class="footer-logo" />
+                    <img src="/assets/img/logo_seed.webp"  alt="Seed Logo" title="Seed - Écojardinage urbain" class="footer-logo" />
                     <div class="socialIcons">
                         <a title="Site de MMI Agency" href="https://mmi23b04.sae202.ovh/agence/" target="_blank"><i class="fa fa-laptop"></i></a>
                         <a title="Seed sur Facebook" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>

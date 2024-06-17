@@ -15,11 +15,15 @@
                     echo "<h2>Bonjour, $userDisplayName.</h2>";
                 }
                 ?><br>
-                <a href="#about2" class="about-index">En Savoir Plus</a> 
+            <p>Chez Seed, nous croyons en la puissance de la nature et de la communauté. Notre mission est de créer une plateforme où les passionnés de jardinage peuvent se connecter, partager des ressources, et cultiver des espaces verts ensemble. Nous nous efforçons de promouvoir des pratiques de jardinage durables et de rendre le jardinage accessible à tous.</p><br>
+            <a href="/jardins/index.php" class="about-index">Voir les Jardins Disponibles</a> 
             </div>
             <div class="image">
                 <img src="/assets/img/svg/logo.svg" alt="Seed Image" title="Logo de Seed - Écojardinage urbain">
             </div>
+            <div class="scroll-down">
+            <a href="#about2"><i class="fas fa-chevron-down"></i></a>
+        </div>
         </div>
     </section>
 
@@ -28,7 +32,8 @@
         <div class="content">
             <div class="text">
                 <h1>QU'EST-CE QUE Seed ?</h1><br>
-                <p>Chez Seed, nous croyons en la puissance de la nature et de la communauté. Notre mission est de créer une plateforme où les passionnés de jardinage peuvent se connecter, partager des ressources, et cultiver des espaces verts ensemble. Nous nous efforçons de promouvoir des pratiques de jardinage durables et de rendre le jardinage accessible à tous.</p>
+                <p>Chez Seed, nous croyons en la puissance de la nature et de la communauté. Notre mission est de créer une plateforme où les passionnés de jardinage peuvent se connecter, partager des ressources, et cultiver des espaces verts ensemble. Nous nous efforçons de promouvoir des pratiques de jardinage durables et de rendre le jardinage accessible à tous.</p><br>
+                <a href="/jardins/gestion.php" class="about-index">Gérer ses Jardins</a>
             </div>
             <div class="image2">
                 <img src="/assets/img/Index2.webp" alt="Image de jardinage urbain" title="Image de jardinage urbain">
@@ -62,8 +67,12 @@
             </div>
         </div>
     </section>
+    <div id="scrollToTop">
+    <a href="#" title="Revenir en haut"><i class="fas fa-chevron-up"></i></a>
+</div>
 </main>
 
 <?php
     require_once(DOCUMENT_ROOT . 'footer.php');
 ?>
+

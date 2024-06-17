@@ -63,6 +63,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
 .navIcon {
@@ -94,6 +95,61 @@ nav {
 
 .home-logo {
     height: 50px;
+}
+
+/* CSS pour le bouton de scroll */
+.scroll-down {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.scroll-down a {
+    color: #fff;
+    font-size: 24px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-down a:hover {
+    background-color: #555;
+}
+
+.scroll-down a i {
+    position: relative;
+    top: 2px;
+}
+
+/* CSS Scroll TOP */ 
+
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Initialement caché */
+    z-index: 1000;
+}
+
+#scrollToTop a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 24px;
+    background-color: #333333;
+    padding: 13px;
+    border-radius: 100%;
+}
+
+#scrollToTop a:hover {
+    background-color: #555555;
 }
 
 
@@ -549,7 +605,7 @@ form textarea:focus {
 
 .section .text {
     flex: 1;
-    padding-right: 20px;
+    padding-right: 50px;
     text-align: center;
 }
 
@@ -564,6 +620,7 @@ form textarea:focus {
     font-size: 20px;
     color: black;
     text-align: justify;
+    text-indent: 60px;
 }
 
 .section .image, .section .image2 {
@@ -582,6 +639,20 @@ form textarea:focus {
     border-radius: 10px; /* Bord arrondi */
     border: 2px solid #7FB096; /* Bordure de 2px avec couleur aqua */
 }
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajustez la hauteur selon votre besoin */
+    text-align: center;
+    background-image: url('/assets/img/Back.webp'); /* Votre image de fond */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
 
 .about-index {
     display: inline-block;
@@ -608,6 +679,9 @@ form textarea:focus {
     align-items: center;
     justify-content: center;
     text-align: left;
+    background-image: url('/assets/img/Back.webp'); /* Votre image de fond */
+    background-size: cover;
+    background-position: center;
     border-bottom: 2px solid #7FB096; /* Ajoute une bordure en bas de chaque section */
     border-left: 10px solid #7FB096; /* Ajoute une bordure à gauche de chaque section */
     border-right: 10px solid #7FB096; /* Ajoute une bordure à droite de chaque section */
@@ -624,8 +698,9 @@ form textarea:focus {
 
 #services .text {
     flex: 1;
-    padding-left: 20px; /* Marge à gauche pour séparer le texte de l'image */
+    padding-left: 50px; /* Marge à gauche pour séparer le texte de l'image */
     text-align: center;
+    text-indent: 60px;
 }
 
 #services .text h1 {
