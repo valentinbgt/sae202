@@ -659,6 +659,7 @@ form textarea:focus {
 
 #third-section {
     background-color: #cdead9; 
+    margin-bottom: -30px;
 }
 
 #about2 {
