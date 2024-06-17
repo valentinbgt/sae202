@@ -62,7 +62,7 @@
 
                             <div class="separator"></div>
 
-                            <p><?= $owner ?></p>
+                            <p><span class="actif"><?= $owner ?></span></p>
                         </div>
                         
                         <div class="jardinActions">

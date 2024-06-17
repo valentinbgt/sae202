@@ -187,17 +187,17 @@ nav {
     fill: var(--blue-accent);
 }
 
-footer {
-    background-color: #7FB096;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: auto;
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-    height: 300px;
-}
+    footer {
+        background-color: #7FB096;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        margin-top: auto;
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        height: 300px;
+    }
 
 .footerContainer {
     display: flex;
@@ -588,7 +588,7 @@ form textarea:focus {
 /* CSS pour les sections */
 
 .section {
-    height: calc(100vh - 86px); /* Chaque section prend 100% de la hauteur de la page */
+    height: 100vh; /* Chaque section prend 100% de la hauteur de la page */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -763,6 +763,22 @@ form textarea:focus {
   }
   
 @media screen and (max-width: 1350px) {
+
+    footer {
+        background-color: #7FB096;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        margin-top: auto;
+        position: absolute;
+        width: 100%;
+        height: 300px;
+    }
+
+    .main {
+        margin-bottom: 100px; /* Replace with the desired height of your footer */
+      }
+
     #signForm .formBox,
     #addGardenForm .formBox {
         width: 100%;
@@ -792,6 +808,7 @@ form textarea:focus {
         text-wrap: wrap;
         text-align: center;
     }
+    
 }
 
 /* Jardin Emprunt */
@@ -1110,6 +1127,32 @@ form textarea:focus {
     body {
         background-color: #FFFCED;
     }
+    
+    footer {
+        position: static; /* Remove fixed positioning on smaller screens */
+        bottom: auto; /* Remove bottom positioning */
+      }
+    
+    .footerNav {
+        margin-bottom: 100px;
+    }
+
+    .footerContainer {
+        background-color: #7FB096;
+    }
+
+    .footerNav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+        margin-bottom: 40px;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
 
     .topHeroImage {
         background-image: url('/assets/img/BackgroundTel.webp');
@@ -1169,10 +1212,22 @@ form textarea:focus {
     h2.pageSeconTitle {
         font-size: 9vw;
     }
-
-    footer {
-        display: none;
-    }
+    
+    .footerNav {
+        text-align: center; /* Center navigation links on small screens */
+      }
+      
+      .footerNav a {
+        font-size: 14px; /* Adjust font size for smaller screens */
+      }
+      
+      .footerNav .contact-button {
+        margin: 10px auto; /* Center contact button on small screens */
+      }
+      
+      .footerBottom p {
+        font-size: 14px; /* Adjust paragraph font size for smaller screens */
+      }
 
     .jardinsContainer {
         grid-template-columns: 1fr;
@@ -1388,15 +1443,14 @@ form textarea:focus {
         margin-bottom: 110px;
     }
 
-    #third-section {
-        background-color: #cdead9; 
-        margin-bottom: 30px;
-    }
-
     .searchForm {
         padding: 5px 10px; /* Reduce padding for very small screens */
       }
       .searchForm button[type="submit"] {
         font-size: 12px; /* Adjust button font size for mobile */
       }
+
+    .jardinEmprunt {
+        margin-bottom: 40px;
+    }
 }
