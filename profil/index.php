@@ -19,20 +19,25 @@
             <h2 class="pageSeconTitle">Gérez votre profil utilisateur</h2>
 
             <script src="/assets/js/profil.js" defer></script>
-            <form action="edit.php" class="profil" method="post">
-                <input type="text" name="profilName" id="profilName" value="<?= $_SESSION["user_displayName"] ?>" placeholder="<?= $_SESSION["user_displayName"] ?>">
+            <form action="edit.php" class="profil" method="post" enctype="multipart/form-data">
+                <input type="text" name="profilName" id="profilName" value="<?= $user_displayName ?>" placeholder="<?= $user_displayName ?>">
                 <input type="text" name="profilUsername" id="profilUsername" value="<?= $user_name ?>" placeholder="<?= $user_name ?>">
-                <img id="profilImage" src="/profil/picture.php?user=<?= $user_name; ?>" alt="Photo de profil de <?= $user_displayName ?>">
+
+                <img id="profilImage" src="data:image/webp;base64,<?= $user_profilePicture; ?>" alt="Photo de profil de <?= $user_displayName ?>">
                 <input type="file" name="profilPictureInput" id="profilPictureInput" accept="image/*" hidden>
                 <a id="addPictureButton" class="button little">Changer de photo</a>
+
                 <input type="text" name="profilEmail" id="profilEmail" value="<?= $user_email ?>" placeholder="<?= $user_email ?>">
-                <label for="profilPassword">Mot de passe</label>
-                <input type="password" name="profilPassword" id="profilPassword" placeholder="************">
+
+                <label for="profilCurrentPassword">Mot de passe actuel</label>
+                <input type="password" name="profilCurrentPassword" id="profilCurrentPassword" placeholder="************">
+                <label for="profilNewPassword">Nouveau mot de passe</label>
+                <input type="password" name="profilNewPassword" id="profilNewPassword" placeholder="************">
                 <label for="profilConfirmPassword">Confirmer le mot de passe</label>
                 <input type="password" name="profilConfirmPassword" id="profilConfirmPassword" placeholder="************">
-
                 
-                <input type="submit" class="button little">Enregister les modifications</input>
+                <a href="">Annuler les modifications</a>
+                <input type="submit" class="button little" value="Enregister les modifications">
 
                 <br><br><br>
                 <p><a href="/jardins/gestion.php">Gérer mes jardins</a></p>
