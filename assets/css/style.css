@@ -730,50 +730,6 @@ form textarea:focus {
     border: 2px solid #7FB096; /* Bordure de 2px avec couleur */
 }   
 
-/* Jardin Emprunt */
-.jardinEmprunt {
-    background-color: #f4f4f4; /* Couleur de fond gris */
-    border-radius: 8px; /* Même border-radius que les autres sections */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-top: 20px;
-    text-align: center; /* Center-align text */
-    max-width: 600px; /* Largeur maximale de la boîte */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.jardinEmprunt img {
-    width: 100%; /* Image prend 100% de la largeur de son conteneur */
-    height: auto;
-    border-top-left-radius: 8px; /* Border-radius du coin supérieur gauche */
-    border-top-right-radius: 8px; /* Border-radius du coin supérieur droit */
-}
-
-.jardinEmprunt .infos {
-    padding: 15px 0;
-}
-
-.jardinEmprunt .infos p {
-    margin: 8px 0;
-}
-
-.jardinEmprunt .button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #28a745; /* Couleur de fond du bouton */
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px; /* Même border-radius que les autres boutons */
-    transition: background-color 0.3s;
-}
-
-.jardinEmprunt .button:hover {
-    background-color: #218838; /* Couleur de fond du bouton au survol */
-}
-
 
 @media screen and (max-width: 1350px) {
     #signForm .formBox,
@@ -801,6 +757,123 @@ form textarea:focus {
         text-wrap: wrap;
         text-align: center;
     }
+}
+
+/* Jardin Emprunt */
+.jardinEmprunt {
+    border: solid 2px #7fb096;
+    border-radius: 12px;
+    padding: 20px;
+    padding-top: 118px;
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f0ee;
+    margin: 0 auto; /* Centrer horizontalement */
+    width: 80%; /* Limiter la largeur */
+    max-width: 600px; /* Exemple de largeur maximale */
+}
+
+.jardinEmprunt img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.jardinEmprunt .jardinTitle {
+    font-weight: 600;
+    font-size: 18px;
+    text-wrap: nowrap;
+    white-space: nowrap; /* Utiliser white-space pour limiter le texte sur une ligne */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.jardinEmprunt .location {
+    font-weight: 600; /* Mettre le texte en gras */
+    font-size: 18px; /* Taille de la police (vous pouvez ajuster selon vos besoins) */
+    color: #333; /* Couleur du texte */
+    text-align: center; /* Centrer le texte horizontalement */
+    white-space: nowrap; /* Empêcher le texte de passer à la ligne */
+    text-overflow: ellipsis; /* Ajouter des points de suspension si le texte dépasse */
+    overflow: hidden; /* Masquer le texte excédentaire */
+    margin: 8px auto; /* Centrer horizontalement avec une marge en haut et en bas */
+    width: 90%; /* Limiter la largeur du texte */
+}
+
+.jardinEmprunt .gps {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(155, 155, 155);
+    width: fit-content;
+    margin: 0 auto;
+    width: 100%;
+    text-wrap: nowrap;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.jardinEmprunt .separator {
+    width: 100px;
+    height: 1px;
+    background: gray;
+    margin: 6px auto;
+}
+
+.jardinEmprunt .jardinEmpruntD .separator {
+    width: 1px;
+    height: 14px;
+    background: gray;
+    margin: auto 10px;
+}
+
+.jardinEmprunt .jardinEmpruntD {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 500;
+}
+
+.jardinEmprunt .jardinEmpruntD .surface {
+    text-align: center;
+}
+
+.jardinEmprunt .jardinEmpruntD .actif {
+    color: #0a6847;
+}
+
+.jardinEmprunt .empruntEnvoi {
+    margin: 0 auto;
+    margin-top: 6px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: center;
+}
+
+.jardinEmprunt .empruntEnvoi a {
+    text-decoration: none;
+    background-color: #7FB096;
+    border: solid 2px #7FB096;
+    color: white;
+    padding: 10px 12px;
+    margin: 8px;
+    border-radius: 8px;
+    transition: 0.1s all ease-out;
+}
+
+.jardinEmprunt .empruntEnvoi a:hover {
+    background-color: #f0f0ee;
+    color: black;
+    transition: 0.2s all ease-out;
+    font-weight: 500;
 }
 
 .carteJardin {
@@ -1225,4 +1298,5 @@ form textarea:focus {
         margin: 0 auto; /* Centre le paragraphe horizontalement */
 
     }
+    
 }

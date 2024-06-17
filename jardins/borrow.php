@@ -96,10 +96,16 @@
         <div class="jardinEmprunt">
             <img src="picture.php?id=<?= $jardin_enc_id ?>" alt="Image du jardin <?= $jardin_location ?>">
             <p class="location"><?= $jardin_location ?></p>
-            <p class="gps"><?= $jardin_gps ?></p>
-            <p class="surface">Surface : <?= $parcelle['parcelle_taille'] ?>m²</p>
-            <p class="owner">Propriétaire : <?= $owner ?></p>
+            <p class="gps">GPS : <?= $jardin_gps ?></p>
+            <div class="separator"></div>
+            <div class="jardinEmpruntD">
+            <p class="surface">Surface :<br><?= $parcelle['parcelle_taille'] ?>m²</p>
+            <div class="separator"></div>
+            <p class="owner">Propriétaire : <br><span class="actif"><?= $owner ?></span></p>
+            </div>
+            <div class="empruntEnvoi">
             <a class="button" href="?id=<?= urlencode($_GET["id"]) ?>&s=<?= urlencode($_GET["s"]) ?>&go">Emprunter</a>
+            </div>
             <p>Le propriétaire, <?= $owner ?>, sera averti et devra valider votre demande manuellement.</p>
         </div>
         
