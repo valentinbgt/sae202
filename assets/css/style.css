@@ -668,7 +668,7 @@ form textarea:focus {
 .about-index {
     display: inline-block;
     background-color: white;
-    color: #0a6847;
+    color: #7FB096;
     padding: 10px 20px;
     border-radius: 20px; 
     border: 2px solid #7FB096;
@@ -1068,40 +1068,48 @@ form textarea:focus {
     backdrop-filter: contrast(0.5) blur(4px);
 }
 
-.profil{
+/* General form styles */
+.profil {
     display: flex;
     flex-direction: column;
-    width: fit-content; /* DEV */
-    margin: 0 auto;
-    align-items: flex-start;
-
-}
-
-.profil input[type=text]{
-    border: none;
-    font-size: 18px;
-    background: transparent;
-    padding: 6px 10px;
-}
-.profil input[type=text]#profilName{
+    align-items: center; /* Center elements horizontally */
+    width: 100%; /* Stretch to full width on larger screens */
+    max-width: 500px; /* Limit width on smaller screens */
+    margin: 0 auto; /* Center form horizontally */
+    padding: 20px; /* Add some padding for better spacing */
+  }
+  
+  .profil input[type="text"],
+  .profil input[type="password"],
+  .profil input[type="email"] {
+    border: 1px solid #ccc; /* Add a border for all text inputs */
+    font-size: 16px; /* Consistent font size for inputs */
+    background-color: #fff; /* White background for inputs */
+    padding: 10px; /* Add padding for better readability */
+    margin-bottom: 15px; /* Add space between inputs */
+    width: 100%; /* Make inputs fill the available width */
+  }
+  
+  .profil input[type="text"]#profilName {
     font-weight: 600;
-    font-size: 22px;
-}
-
-.profil input[type=text]:focus{
-
-}
-
-.profil #profilImage{
+    font-size: 20px; /* Adjust font size slightly for name */
+  }
+  
+  .profil input[type="text"]:focus {
+    border-color: #7FB096; /* Change border color on focus for better feedback */
+  }
+  
+  /* Profile picture styles */
+  .profil #profilImage {
     cursor: pointer;
     width: 200px;
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
+    margin-bottom: 15px; /* Add space below the image */
+    border: 4px solid #7FB096; /* Example border color */
 }
-
-
-
+  
 .footerNav a {
     color: white;
     text-decoration: none;
@@ -1489,10 +1497,13 @@ form textarea:focus {
         border-top: 10px solid #7FB096;
     }
 
-}
-
 .enregistrerProfil{
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+.profil {
+    width: 90%;
+}
 }
