@@ -40,8 +40,8 @@
                 <?php
                     if(empty($_SESSION["user_id"])){
                 ?>
-                    <div <?= ($page == 'signin.php') ? 'class="navLink active"' : 'class="navLink"' ?>><object data="/assets/img/svg/user.svg" type="image/svg+xml" class="navIcon"></object><a href="/profil/signin.php?from=<?= $from; ?>"><span class="navLinkText">Connexion</span></a></div>
-                    <div <?= ($page == 'signup.php') ? 'class="navLink active"' : 'class="navLink"' ?>><object data="/assets/img/svg/user.svg" type="image/svg+xml" class="navIcon"></object><a href="/profil/signup.php?from=<?= $from; ?>"><span class="navLinkText">Inscription</span></a></div>
+                    <div <?php if($page == "signin.php") echo "hidden"; ?> <?= ($page == 'signin.php') ? 'class="navLink active"' : 'class="navLink"' ?>><object data="/assets/img/svg/user.svg" type="image/svg+xml" class="navIcon"></object><a href="/profil/signin.php?from=<?= $from; ?>"><span class="navLinkText">Connexion</span></a></div>
+                    <div <?php if($page != "signin.php") echo "hidden"; ?> <?= ($page == 'signup.php') ? 'class="navLink active"' : 'class="navLink"' ?>><object data="/assets/img/svg/user.svg" type="image/svg+xml" class="navIcon"></object><a href="/profil/signup.php?from=<?= $from; ?>"><span class="navLinkText">Inscription</span></a></div>
                 <?php
                     }else{
                 ?>

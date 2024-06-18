@@ -1488,4 +1488,11 @@ form textarea:focus {
     .section {
         border-top: 10px solid #7FB096;
     }
+
+}
+
+.enregistrerProfil{
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }

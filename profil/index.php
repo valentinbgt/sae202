@@ -36,14 +36,15 @@
                 <label for="profilConfirmPassword">Confirmer le mot de passe</label>
                 <input type="password" name="profilConfirmPassword" id="profilConfirmPassword" placeholder="************">
                 
-                <a href="">Annuler les modifications</a>
-                <input type="submit" class="button little" value="Enregister les modifications">
+                <div class="enregistrerProfil">
+                    <a class="button little" href="">Annuler</a>
+                    <input type="submit" class="button little" value="Enregister">
+                </div>
 
-                <br><br><br>
-                <p><a href="/jardins/gestion.php">Gérer mes jardins</a></p>
-                <p><a href="/jardins/parcelles.php">Gérer les parcelles empruntés</a></p>
-                <!-- <p><a href="">Gérer les articles disponibles</a></p> -->
-                <p><a href="/profil/inc/logout.proc.php">Déconnexion</a></p>
+                <br>
+                <a class="button" href="/jardins/gestion.php">Gérer mes jardins</a>
+                <a class="button" href="/jardins/parcelles.php">Gérer les parcelles empruntés</a>
+                <a class="button" href="/profil/inc/logout.proc.php">Déconnexion</a>
             </form>
             
         </main>
