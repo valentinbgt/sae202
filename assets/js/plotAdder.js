@@ -1,12 +1,1 @@
-const container = $("#addGardenForm .plotsList");
-const button = $("#addPlotButton");
-
-button.click(() => {
-    container.append(`<div class="plot">
-        <span>Ajouter 
-        <input type="number" id="plotNumber" name="plotNumber[]" min="0" value="0"/> 
-        parcelles</span> <span>de 
-        <input type="number" id="plotSurface" name="plotSurface[]" min="0" value="0"/>
-        m²</span>
-    <div>`);
-})
+const _0x4d3a95=_0x1c47;function _0x3ce7(){const _0x497498=['click','622oYYaeD','46929wkwhdY','#addPlotButton','append','3950397tfqhnQ','2747486ILpvbh','8204892LCwpJK','44eQHNLH','3207060FKxGLr','#addGardenForm\x20.plotsList','4164ZIxceX','16iHZlzH','16ragCHq','6490uDreWG','<div\x20class=\x22plot\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<span>Ajouter\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22number\x22\x20id=\x22plotNumber\x22\x20name=\x22plotNumber[]\x22\x20min=\x220\x22\x20value=\x220\x22/>\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20parcelles</span>\x20<span>de\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22number\x22\x20id=\x22plotSurface\x22\x20name=\x22plotSurface[]\x22\x20min=\x220\x22\x20value=\x220\x22/>\x0a\x20\x20\x20\x20\x20\x20\x20\x20m²</span>\x0a\x20\x20\x20\x20<div>','5365ehEjmk'];_0x3ce7=function(){return _0x497498;};return _0x3ce7();}function _0x1c47(_0x553012,_0x47e681){const _0x3ce7de=_0x3ce7();return _0x1c47=function(_0x1c470e,_0x2d365d){_0x1c470e=_0x1c470e-0x1b3;let _0x1c2417=_0x3ce7de[_0x1c470e];return _0x1c2417;},_0x1c47(_0x553012,_0x47e681);}(function(_0x28b99e,_0x5334aa){const _0x222cf0=_0x1c47,_0x9fba7c=_0x28b99e();while(!![]){try{const _0x5cbdae=-parseInt(_0x222cf0(0x1c0))/0x1*(parseInt(_0x222cf0(0x1c2))/0x2)+parseInt(_0x222cf0(0x1c3))/0x3*(-parseInt(_0x222cf0(0x1bc))/0x4)+parseInt(_0x222cf0(0x1be))/0x5*(-parseInt(_0x222cf0(0x1bb))/0x6)+-parseInt(_0x222cf0(0x1b6))/0x7+parseInt(_0x222cf0(0x1bd))/0x8*(parseInt(_0x222cf0(0x1b5))/0x9)+parseInt(_0x222cf0(0x1b9))/0xa+-parseInt(_0x222cf0(0x1b8))/0xb*(-parseInt(_0x222cf0(0x1b7))/0xc);if(_0x5cbdae===_0x5334aa)break;else _0x9fba7c['push'](_0x9fba7c['shift']());}catch(_0xd0aedb){_0x9fba7c['push'](_0x9fba7c['shift']());}}}(_0x3ce7,0xddf53));const container=$(_0x4d3a95(0x1ba)),button=$(_0x4d3a95(0x1b3));button[_0x4d3a95(0x1c1)](()=>{const _0x2df625=_0x4d3a95;container[_0x2df625(0x1b4)](_0x2df625(0x1bf));});

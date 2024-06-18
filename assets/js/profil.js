@@ -1,16 +1,1 @@
-const pictureInput = document.getElementById("profilPictureInput");
-const addPictureButton = document.getElementById("addPictureButton");
-const picturePreview = document.getElementById("profilImage");
-
-addPictureButton.addEventListener("click", () => {
-    pictureInput.click();
-})
-picturePreview.addEventListener("click", () => {
-    pictureInput.click();
-})
-
-pictureInput.addEventListener("change", () => {
-    const file = pictureInput.files[0];
-    picturePreview.src = URL.createObjectURL(file);
-    picturePreview.hidden = false;
-})
+function _0x52bf(){const _0xc87652=['change','45731mtapno','97128rRDCtI','hidden','profilPictureInput','getElementById','addPictureButton','136314rkxpcl','14590vHIItf','102ggJPnQ','395845acNHZe','1681638BxZDyN','8NJPCaW','addEventListener','6370020XqrVjl','920DwVwJN','639yDAWNd','572NNPioP','createObjectURL','click','src'];_0x52bf=function(){return _0xc87652;};return _0x52bf();}const _0x12af79=_0x28c2;(function(_0x59344d,_0x556d86){const _0x5d677c=_0x28c2,_0x112d82=_0x59344d();while(!![]){try{const _0x32500c=parseInt(_0x5d677c(0xf5))/0x1*(parseInt(_0x5d677c(0xfa))/0x2)+parseInt(_0x5d677c(0xf9))/0x3+parseInt(_0x5d677c(0xfc))/0x4+parseInt(_0x5d677c(0xf8))/0x5*(-parseInt(_0x5d677c(0xf7))/0x6)+-parseInt(_0x5d677c(0xef))/0x7*(parseInt(_0x5d677c(0xfd))/0x8)+-parseInt(_0x5d677c(0xe9))/0x9*(parseInt(_0x5d677c(0xf6))/0xa)+-parseInt(_0x5d677c(0xea))/0xb*(-parseInt(_0x5d677c(0xf0))/0xc);if(_0x32500c===_0x556d86)break;else _0x112d82['push'](_0x112d82['shift']());}catch(_0x43927f){_0x112d82['push'](_0x112d82['shift']());}}}(_0x52bf,0xe03a6));function _0x28c2(_0x2bfdce,_0x271547){const _0x52bf96=_0x52bf();return _0x28c2=function(_0x28c2d5,_0x334d99){_0x28c2d5=_0x28c2d5-0xe9;let _0xb668c8=_0x52bf96[_0x28c2d5];return _0xb668c8;},_0x28c2(_0x2bfdce,_0x271547);}const pictureInput=document[_0x12af79(0xf3)](_0x12af79(0xf2)),addPictureButton=document['getElementById'](_0x12af79(0xf4)),picturePreview=document[_0x12af79(0xf3)]('profilImage');addPictureButton['addEventListener'](_0x12af79(0xec),()=>{const _0x5f7b51=_0x12af79;pictureInput[_0x5f7b51(0xec)]();}),picturePreview[_0x12af79(0xfb)](_0x12af79(0xec),()=>{const _0x350e05=_0x12af79;pictureInput[_0x350e05(0xec)]();}),pictureInput['addEventListener'](_0x12af79(0xee),()=>{const _0x12fc0a=_0x12af79,_0x28cd05=pictureInput['files'][0x0];picturePreview[_0x12fc0a(0xed)]=URL[_0x12fc0a(0xeb)](_0x28cd05),picturePreview[_0x12fc0a(0xf1)]=![];});

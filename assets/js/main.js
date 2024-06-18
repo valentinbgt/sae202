@@ -1,4 +1,1 @@
-function errorMsg(message) {
-    alert(message);
-}
-
+function errorMsg(_0x34e63d){alert(_0x34e63d);}

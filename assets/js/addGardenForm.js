@@ -1,16 +1,1 @@
-const pictureInput = document.getElementById("jardinPicture");
-const addPictureButton = document.getElementById("addPicture");
-const picturePreview = document.getElementById("picturePreview");
-
-addPictureButton.addEventListener("click", () => {
-    pictureInput.click();
-})
-picturePreview.addEventListener("click", () => {
-    pictureInput.click();
-})
-
-pictureInput.addEventListener("change", () => {
-    const file = pictureInput.files[0];
-    picturePreview.src = URL.createObjectURL(file);
-    picturePreview.hidden = false;
-})
+const _0x10fc75=_0x1ae9;function _0x2332(){const _0x260af4=['4FvZDjw','978VCYfmX','src','55398EHfdnx','207010WpjyzR','jardinPicture','files','457784wcTbWB','getElementById','12508584nkgTCr','addEventListener','10lMNlIB','hidden','click','225uAsRaQ','62657zIqQoE','2339216VpCZQb','3949377iAMgJe'];_0x2332=function(){return _0x260af4;};return _0x2332();}(function(_0x508455,_0x39add0){const _0x1f6b41=_0x1ae9,_0x2d831f=_0x508455();while(!![]){try{const _0x1d1f23=parseInt(_0x1f6b41(0x152))/0x1+parseInt(_0x1f6b41(0x14d))/0x2+-parseInt(_0x1f6b41(0x14e))/0x3*(-parseInt(_0x1f6b41(0x14f))/0x4)+-parseInt(_0x1f6b41(0x153))/0x5+-parseInt(_0x1f6b41(0x150))/0x6*(parseInt(_0x1f6b41(0x14c))/0x7)+parseInt(_0x1f6b41(0x156))/0x8*(-parseInt(_0x1f6b41(0x15d))/0x9)+parseInt(_0x1f6b41(0x15a))/0xa*(parseInt(_0x1f6b41(0x158))/0xb);if(_0x1d1f23===_0x39add0)break;else _0x2d831f['push'](_0x2d831f['shift']());}catch(_0x4fc997){_0x2d831f['push'](_0x2d831f['shift']());}}}(_0x2332,0xb6863));function _0x1ae9(_0x1aed56,_0x61ea66){const _0x2332de=_0x2332();return _0x1ae9=function(_0x1ae9d3,_0x5a09eb){_0x1ae9d3=_0x1ae9d3-0x14c;let _0x2b40f9=_0x2332de[_0x1ae9d3];return _0x2b40f9;},_0x1ae9(_0x1aed56,_0x61ea66);}const pictureInput=document[_0x10fc75(0x157)](_0x10fc75(0x154)),addPictureButton=document['getElementById']('addPicture'),picturePreview=document[_0x10fc75(0x157)]('picturePreview');addPictureButton[_0x10fc75(0x159)]('click',()=>{const _0x501664=_0x10fc75;pictureInput[_0x501664(0x15c)]();}),picturePreview[_0x10fc75(0x159)](_0x10fc75(0x15c),()=>{const _0x12f7f3=_0x10fc75;pictureInput[_0x12f7f3(0x15c)]();}),pictureInput[_0x10fc75(0x159)]('change',()=>{const _0x2408a2=_0x10fc75,_0x11a923=pictureInput[_0x2408a2(0x155)][0x0];picturePreview[_0x2408a2(0x151)]=URL['createObjectURL'](_0x11a923),picturePreview[_0x2408a2(0x15b)]=![];});
