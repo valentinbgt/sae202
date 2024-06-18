@@ -30,3 +30,16 @@
         $query->execute();
         return $query->fetch();
     }
+
+    function getUserName($userId){
+        $db = dbConn();
+        $sql = "SELECT * FROM users WHERE user_id = :val";
+        $query = $db->prepare($sql);
+        $query->bindParam(':val', $userId);
+        $query->execute();
+        $res = $query->fetch();
+
+        $displayName = $res["user_displayName"];
+        $userName = $res["user_name"];
+        return "$displayName ($userName)";
+    }

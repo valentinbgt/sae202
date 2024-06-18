@@ -51,10 +51,57 @@
 
 
             <h2 class="pageSeconTitle">Table Jardins</h2>
-            <p>Aucun jardin dispinible actuellement</p>
+            <?php
+                $jardins = findAll('jardins');
+
+                foreach ($jardins as $jardin) {
+                    extract($jardin);
+
+                    $jardin_enc_id = urlencode(base64_encode($jardin_id));
+
+                    ?>
+
+                        <div class="jardinAdmin">
+                            <img src="/jardins/picture.php?id=<?= $jardin_enc_id ?>" alt="Photo di jardin <?= $jardin_location ?>" height="100px">
+                            <p><?= $jardin_location ?></p>
+                            <p><?= $jardin_gps ?></p>
+                            
+                            <p><?= getUserName($jardin_user_id) ?></p>
+                        </div>
+
+                    <?php
+                }
+            ?>
 
             <h2 class="pageSeconTitle">Table Parcelles</h2>
-            <p>Aucune parcelle disponible actuellement</p>
+            <?php
+                $parcelles = findAll('parcelles');
+
+                foreach ($parcelles as $parcelle) {
+                    extract($parcelle);
+
+                    $jardin = findOne('jardins', 'jardin_id', $jardin_id);
+
+                    $jardin_enc_id = urlencode(base64_encode($jardin_id));
+
+                    ?>
+
+                        <div class="jardinAdmin">
+                            <img src="/jardins/picture.php?id=<?= $jardin_enc_id ?>" alt="Photo di jardin <?= $jardin_location ?>" height="100px">
+                            <p><?= $jardin_location ?></p>
+                            <p><?= $jardin_gps ?></p>
+                            
+                            <p><?= getUserName($jardin_user_id) ?></p>
+
+                            <p><?= $parcelle_taille ?>m²</p>
+                            <p>Disponibilité : <?= $parcelle_available ?></p>
+                            <p>Validation : <?= $parcelle_validation ?></p>
+                            <p>Locataire : <?= ($parcelle_user_id == null) ? "Aucun" : getUserName($parcelle_user_id) ?></p>
+                        </div>
+
+                    <?php
+                }
+            ?>
         </main>
 <?php
     require_once(DOCUMENT_ROOT . 'footer.php');
