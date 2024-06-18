@@ -16,7 +16,7 @@
     header('Accept-Ranges: bytes');
     header("Content-Type: image/webp; charset=utf-8");
     header('Content-Length: '.strlen($image));
-    header('Etag: ' . hash('sha256', $image));
-    header('Last-Modified: Sat, 01 Jan 2000 00:00:00 GMT');
+    // header('Etag: ' . hash('sha256', $image));
+    // header('Last-Modified: Sat, 01 Jan 2000 00:00:00 GMT');
 
     echo $image;
