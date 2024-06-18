@@ -23,7 +23,7 @@
                 <input type="text" name="profilName" id="profilName" value="<?= $user_displayName ?>" placeholder="<?= $user_displayName ?>">
                 <input type="text" name="profilUsername" id="profilUsername" value="<?= $user_name ?>" placeholder="<?= $user_name ?>">
 
-                <img id="profilImage" src="data:image/webp;base64,<?= $user_profilePicture; ?>" alt="Photo de profil de <?= $user_displayName ?>">
+                <img id="profilImage" src="picture.php?user=<?= $user_name; ?>" alt="Photo de profil de <?= $user_displayName ?>">
                 <input type="file" name="profilPictureInput" id="profilPictureInput" accept="image/*" hidden>
                 <a id="addPictureButton" class="button little">Changer de photo</a>
 
