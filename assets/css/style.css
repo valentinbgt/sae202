@@ -1088,9 +1088,9 @@ form textarea:focus {
     font-size: 22px;
 }
 
-.profil input[type=text]:focus{
+/* .profil input[type=text]:focus{
 
-}
+} */
 
 .profil #profilImage{
     cursor: pointer;
