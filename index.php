@@ -49,7 +49,7 @@
                 <p>Chez Seed, nous croyons en la puissance de la nature et de la communauté. Notre mission est de créer une plateforme où les passionnés de jardinage peuvent se connecter, partager des ressources, et cultiver des espaces verts ensemble. Nous promouvons des pratiques de jardinage durables et accessibles.</p><br>
             </div>
             <div class="image2">
-                <img src="/assets/img/index3.webp" alt="Image de jardinage urbain" title="Image de jardinage urbain">
+                <img src="/assets/img/Index3.webp" alt="Image de jardinage urbain" title="Image de jardinage urbain">
             </div>
         </div>
     </section>
@@ -63,7 +63,7 @@
                 <a href="/contact/index.php" class="about-index">Nous Contacter</a>
             </div>
             <div class="image2">
-                <img src="/assets/img/index4.webp" alt="Image de jardinage urbain" title="Image de jardinage urbain">
+                <img src="/assets/img/Index4.webp" alt="Image de jardinage urbain" title="Image de jardinage urbain">
             </div>
         </div>
     </section>
