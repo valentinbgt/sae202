@@ -9,6 +9,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Seed, partagez votre jardin et faites des échanges dans une démarche éco responsable.">
         <link rel="icon" href="/assets/img/Favicon.svg" type="image/x-icon">
         <title><?= $title ?></title>
 
@@ -45,7 +46,7 @@
                 <?php
                     }else{
                 ?>
-                    <a href="/profil"><div style="background-image: url('/profil/picture.php?user=<?= $_SESSION["user_name"] ?>');" class="navIcon image"></div></a>
+                    <a href="/profil" title="Page profil utilisateur"><div style="background-image: url('/profil/picture.php?user=<?= $_SESSION["user_name"] ?>');" class="navIcon image"></div></a>
                 <?php
                     }
                 ?>

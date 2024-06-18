@@ -22,7 +22,7 @@
                 <img src="/assets/img/svg/logo.svg" alt="Seed Image" title="Logo de Seed - Écojardinage urbain">
             </div>
             <div class="scroll-down">
-            <a href="#about2"><i class="fas fa-chevron-down"></i></a>
+            <a href="#about2" title="Suite"><i class="fas fa-chevron-down"></i></a>
         </div>
         </div>
     </section>
